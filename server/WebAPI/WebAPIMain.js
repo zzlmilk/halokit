@@ -35,10 +35,16 @@ var WebAPIMain = {
 
 				
 		        //24小时轨迹
-				router.use("/halokit/24g3", require('./Halokit'));		        
+				router.use("/halokit/24g3", require('./Halokit'));		
+
+
+
+
+				router.use("/pet/a",require('./Pet'));        
 
 
 				//api版本控制
+
 				app.use(init.urlPrefix + "/v1", router);
 				//app.use(init.urlPrefix + "/v1", router);
 

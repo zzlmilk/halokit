@@ -52,41 +52,7 @@ var password = "rex123";
 
 		});
 
-		 // describe('/user/signin  Language', function () {
-        
-    //     it('Can  update Language', function (done) {
-            
-    //         var param = {
-    //             clinetID:"String", //个推ID
-    //             language : "en"
-    //         };
-                      
-    //         request(app)
-    //             .post('/sun/v1/user/updatelanguage')
-    //             .send(param)
-    //     		//.expect('Content-Type', /json/)
-    //     		.expect(200) 
-    //             .end(function (err, res) {
 
-    // 			if (err) {
-    // 				throw err;
-    // 			}
-    		
-
-    //             res.body.should.have.property('code');
-    //             res.body.code.should.equal(1);
-    //             res.body.should.have.property('data');
-    //             res.body.data.should.have.property('token');
-
-
-    //             done();
-            
-            
-    //         });   
-            
-    //     });
-        
-    // });
 
 
 });

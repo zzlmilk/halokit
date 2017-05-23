@@ -111,7 +111,35 @@ AppActionHandler.prototype.attach = function(io,socket){
 
         SocketAPIHandler.emitToDevice(deviceID,param);
 
+   });
 
+     socket.on('findlocation', function(param){
+
+     var clientID = param.clientID;
+     var deviceID = param.deviceID || param.deviceid;
+
+
+
+    // console.log('join called',param);
+
+      if(_.isEmpty(clientID)){
+            
+            console.log('err',"no clinetID id");
+              
+            socket.emit('socketerror', {code:Const.resCodeSocketAppNoclinetID});               
+            return;
+        }
+
+          if(_.isEmpty(deviceID)  ){
+            
+            console.log('err',"no deviceID id");
+              
+            socket.emit('socketerror', {code:Const.resCodeSocketLoginNodeviceID});               
+            return;
+        }
+
+
+        SocketAPIHandler.emitToDevice(deviceID,param);
 
    });
 

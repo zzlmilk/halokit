@@ -35,7 +35,6 @@ var SocketAPIHandler = {
 		emitToDevice:function(deviceID,param){			
 		var sessionId = OnlineUsersManager.getOnlineDevicesByDeviceId(deviceID);  
         if(sessionId){   
-
             this.nsp.to(sessionId).send(param);
         	}
 		}

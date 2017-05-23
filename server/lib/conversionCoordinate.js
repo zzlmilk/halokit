@@ -13,17 +13,21 @@
 			imei:"",
 			cdma:"0",
 			bts:"",
-			serverip:""
+			serverip:"",
 			imsi:"",
-			nearbts
+			nearbts:""
 	}
 
 
-	
     //基站坐标通过高得api接口转成gps坐标
-    function conversionCoordinate(variable){
-        
-            
-    }
+    function conversionCoordinate(variable){	
+
+            console.log(variable);
+       	    
+    }	
+
+
+conversionCoordinate(parms);
+
 
 

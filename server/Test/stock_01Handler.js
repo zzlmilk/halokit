@@ -17,14 +17,62 @@ describe('位置上报', function () {
 
 			    userSocketLogin(function(data){
 			    var paramA = {
-							  "deviceid": "861933030000001", 
+							  "deviceid": global.deviceid, 
 							  "func": "01", 
 							  "content": "300816,134652,A,-22.571707,-113.8613968,0.1,0.0,100,1000,50"
 							}
 
+
+
 					global.devicesocket.send(paramA);
-			        global.devicesocket.on("message",function(data){ 
-			         		console.log(data);    			        		
+
+
+			        global.usersocket.on("locationchange",function(data){ 
+			         		data.should.have.property('message');  			
+			         		//console.log(data.message.device)        		
+			        		done();
+			        });
+
+
+			    }); 	 
+     	 				
+    	 });
+
+     });
+
+
+
+     describe(' app 向服务器发起定位', function () {
+ 		
+     	 it('01 app指令 A基站坐标.', function (done) {  
+
+			    userSocketLogin(function(data){
+			    var paramA = {
+							  "deviceid": global.deviceid, 
+							  "func": "01", 
+							  "content": "300816,134652,A,-22.571707,-113.8613968,0.1,0.0,100,1000,50"
+							}
+
+				 var apporderParma = {
+				 		"deviceid": global.deviceid, 
+				 		"func": "01", 
+				 		"clientID":global.clientID
+				 }				
+
+				global.usersocket.emit("findlocation",apporderParma);
+
+
+				global.devicesocket.on("message",function(data){ 
+					if (data.func =="01") {
+						global.devicesocket.send(paramA);
+					};
+				});
+				//global.devicesocket.send(paramA);
+
+
+			        global.usersocket.on("locationchange",function(data){ 
+			         		data.should.have.property('message');  			
+			         	//	console.log(data.message.device)        		
 			        		done();
 			        });
 

@@ -4,11 +4,13 @@ var mongoose = require('mongoose');
 var app = require('../mainTest');
 var io = require('socket.io-client');
 
+var helper = require("./helper");
 
 
 
 
-describe('SOCKET', function () {
+
+describe('App login SOCKET', function () {
 
 var socketURL = "http://localhost:8081/suntest";
 
@@ -23,10 +25,9 @@ var connectOptions ={
 
      	 it('connect device.', function (done) {
 
-
 			     	 	var params = {
-			                clientID : "String2",
-			                deviceID : "12345",
+			                clientID : global.clientID,
+			                deviceID : global.deviceid,
 
 			        	};
 
@@ -65,11 +66,11 @@ var connectOptions ={
 
        describe(' App connect device  with deviceonline', function () {
 
-     	 it('connect device .', function (done) {
+     	 it('can connect device .', function (done) {
 
 
      	 		var deviceParam = {
-			                deviceid : "12345",
+			                deviceid : global.deviceid,
 			                func:"00"
 			        	};
 
@@ -81,6 +82,7 @@ var connectOptions ={
 								 										               
 						 	});
 
+
 			         client.on('message', function(data){							
 
 						var params = {
@@ -88,6 +90,7 @@ var connectOptions ={
 			                deviceID : "12345",
 
 			        	};
+			        	
 
 						var client1 = io.connect(socketURL);
 

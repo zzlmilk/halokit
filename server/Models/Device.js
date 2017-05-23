@@ -21,7 +21,8 @@ DeviceModel.prototype.init = function(mongoose){
         lastOnlineTime:Number, //上一次连接时间
         offlineTime:Number, //断开连接        
    		activeTime:Number, //激活时间
-   	  	version:String ,  //设备版本   	  	       	         
+   	  	version:String ,  //设备版本   	
+          	       	         
     });
 
 	

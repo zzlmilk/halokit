@@ -32,7 +32,8 @@ HalokitG3Model.prototype.init = function(mongoose){
                 steps:String,
                 collCount:String,
         },
-        created: Number,   		   	        	        
+        created: Number,   
+          	        	        
     });
 
     this.model = mongoose.model(Config.dbCollectionPrefix + "HalokitG3s", this.schema);

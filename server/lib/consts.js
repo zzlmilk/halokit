@@ -38,14 +38,24 @@
     Const.notificationPower  = "POWERCHANGE";
     Const.notificationDeviceoffline  = "DEVICEOFFLINE";
     Const.notificationDeviceLight  ="DEVICELIGHT";
-
+    Const.notificationLocationChange = "LOCATIONCHANGE";
 
 
     
     //stock app
     Const.emitCommandDevicepower ="devicepower";
+
     Const.emitCommandDeviceoffline ="deviceoffline";
+
     Const.emitCommandDeviceLight  ="deivecelight";
+    Const.emitCommandDeviceLocationChange  ="locationchange";
+
+    Const.emitCommandDeviceFindLocation  ="findlocation";
+
+
+
+
+
 
 
 

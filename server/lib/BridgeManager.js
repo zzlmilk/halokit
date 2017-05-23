@@ -15,7 +15,9 @@ var BridgeManager = {
     //监听
     init:function(){
         
-        var Observer = require("node-observer");
+         var Observer = require("node-observer");
+
+         //电量
          Observer.subscribe(this, Const.notificationPower, function(who, obj) {
          //var userSocketID = OnlineUsersManager.getOnlineUsersByDeviceId(obj.deviceID);
 
@@ -76,9 +78,41 @@ var BridgeManager = {
          );
 
 
+
         //PushNotificationManager 推送
 
  });
+
+
+
+        //坐标改变
+     Observer.subscribe(this, Const.notificationLocationChange, function(who, obj) {
+
+    
+        if (!obj) {
+            return;
+        };
+
+        
+     
+        
+        obj.deviceID = obj.deviceid ||obj.deviceID;
+        
+       
+        
+
+        SocketAPIHandler.emitToUser(
+                        obj.deviceID,
+                        Const.emitCommandDeviceLocationChange,
+                        {message:{device:obj}}
+         );
+
+
+        //PushNotificationManager 推送
+
+ });
+
+
 
 
 

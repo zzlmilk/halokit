@@ -93,44 +93,40 @@ var connectOptions ={
      });
 
 
-       describe('  device 离线成功后 ，通知用户下线 ', function () {
 
-     	 it('can 通知用户下线', function (done) {
+   //     describe('  device 离线成功后 ，通知用户下线 ', function () {
+
+   //   	 it('can 通知用户下线', function (done) {
+
+			// userSocketLogin(function(data){
+
+			//  	var params = {
+			//                 deviceid : "12345",
+			//                 func:"1C"
+			//         	};
 
 
-
-			userSocketLogin(function(data){
-
-
-			 	var params = {
-			                deviceid : "12345",
-			                func:"1C"
-			        	};
-
-			        global.devicesocket.send(params);
-
-				
-		     	 	global.devicesocket.on("message",function(data){     	
+			//         global.devicesocket.send(params);
+		 //     	 	global.devicesocket.on("message",function(data){     	
 		     	   	
+		 //     	 			global.usersocket.on("deviceonlineoff",function(data){
+		 //     	 				data.code.should.equal(1);
+			// 			 		data.should.have.property('code');
+		 //     	 					done();
+		 //     	 			}) 
 
-		     	 			global.usersocket.on("deviceonlineoff",function(data){
-		     	 				data.code.should.equal(1);
-						 		data.should.have.property('code');
-		     	 					done();
-		     	 			}) 
-
-					})
+			// 		})
 
 	
-     	 	});
+   //   	 	});
 
 
 
 
 
-     	 });
+   //   	 });
 	
-     });
+   //   });
 
 
 
