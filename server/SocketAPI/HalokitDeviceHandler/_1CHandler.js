@@ -5,31 +5,34 @@ var Const = require("../../lib/consts");
 
 var Config = require("../../lib/init");
 var Observer = require("node-observer");
+var TcpSocketAPIHandler = require('../TcpSocketAPIHandler');
 
 
 var _1CHandler = function(){
     
 }
 
-
+//离线上报
  _1CHandler.prototype.attach = function(param,stock,io) {
 
  	
+	 var self = this;
+     var deviceID = param.deviceID ||param.deviceid;
 
-	OnlineUsersManager.removeDevice(stock.id);
- 	stock.send("")
 
- 	 	var device  ={
+		param.content = "1";	
+		TcpSocketAPIHandler.wirteToDevice(param.deviceID,param)	
+ 
 
- 		deviceID:param.deviceid,
- 		power:param.content,
- 		func:param.func,
- 		onlineStatus:false
+ 	//  var device  ={
+ 	// 	deviceID:param.deviceid,
+ 	// 	power:param.content,
+ 	// 	func:param.func,
+ 	// 	onlineStatus:false
 
- 	}	
-
-	
-	Observer.send(this, Const.notificationDeviceoffline, device);
+ 	// }	
+		
+	Observer.send(this, Const.notificationDeviceoffline, param);
 
 		
 }

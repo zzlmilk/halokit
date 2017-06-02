@@ -1,5 +1,7 @@
 var OnlineUsersManager = require('../../lib/OnlineUsersManager');
 var DeviceModel = require('../../Models/Device');
+var TcpSocketAPIHandler = require('../TcpSocketAPIHandler');
+
 
 
 
@@ -8,32 +10,34 @@ var _00Handler = function(){
 }
 
 
- _00Handler.prototype.attach = function(param,stock,io) {
+ _00Handler.prototype.attach = function(param,socket,io) {
  	// body...
 	
-
-
 	var deviceID = param.deviceid;
 	var deviceModel = DeviceModel.get();
 	
-
-	
 	deviceModel.findOne({deviceID:param.deviceid},function(err,device){
-
+		
+		
 		if (!device) {			
-				console.log("no device");
+				console.log("no device");				
 				param.content = "0";
-				stock.send(param)
+				socket.write("{socketerror:no device}");  
+				//TcpSocketAPIHandler.wirteToDevice(deviceID,param)	      
 
+				return;
 		}
 
 		
-
-		param.content = "1";		
-		stock.send(param)
-
 		//设备放入在线列表
-		OnlineUsersManager.addDevice(device.toObject(),stock.id);
+		OnlineUsersManager.addDevice(device.toObject(),socket.id);
+
+	
+		param.content = "1";	
+		TcpSocketAPIHandler.wirteToDevice(deviceID,param)	
+		
+
+	
 
 	})
 

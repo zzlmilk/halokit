@@ -17,7 +17,7 @@ HalokitG3Model.prototype.init = function(mongoose){
 
 	 this.schema = new mongoose.Schema({
         deviceID:{ type: String, index: true },
-        content:String,      
+        //content:String,      
         g3:{
         		myr:String,
         		sfm:String,
@@ -41,7 +41,7 @@ HalokitG3Model.prototype.init = function(mongoose){
 	
 HalokitG3Model.get = function(){
     
-    return DatabaseManager.getModel('HalokitG3').model;
+    return DatabaseManager.getModel('HaloKitG3').model;
     
 }
 

@@ -9,6 +9,9 @@
 
 
 
+   
+
+   
     Const.resCodeSignUpTelNumberDuplicated = 3000005;
     Const.resCodeSignUpNoClientID = 3000006; 
     Const.resCodeSignUpNoDeviceID = 3000007; 
@@ -16,7 +19,19 @@
     Const.resCodeSignUpNoDeviceType = 3000009;
     Const.resCodeSignUpNoAppVersion = 3000010;
     Const.resCodeNullUser = 3000011;
+    Const.resCodeUnBindDeviceNodata = 3000012;
+     Const.resCodeBindDeviceNumberDuplicated = 30000013;
+    //暂时不支持多设备绑定
+    Const.resCodeBindDeviceNosuppotMuitBind = 30000014;
+    Const.resCodeBindDeviceHaveBinded = 30000015;
+     Const.resCodeNoLongitude = 30000016; 
+    Const.resCodeNoLatitude = 30000017; 
+     Const.resCodeNoRadius = 30000018; 
 
+
+        
+
+    Const.resCodeSignUpDeviceIdDuplicated = 3000003;
 
     Const.resCodeSocketAppConnectDeviceSuccee = 1;
     Const.resCodeSocketLoginNoclinetID = 4000001;
@@ -25,6 +40,9 @@
     Const.resCodeSocketDeviceNotOnline = 4000003;
     
     Const.resCodeSocketDeviceNoFunc = 4000004;
+
+
+
 
     //硬件指令
 
@@ -39,7 +57,8 @@
     Const.notificationDeviceoffline  = "DEVICEOFFLINE";
     Const.notificationDeviceLight  ="DEVICELIGHT";
     Const.notificationLocationChange = "LOCATIONCHANGE";
-
+    Const.notificationDeviceResponse = "DEVICEResponse";
+    Const.notificationRAILResponse = "RAIL";
 
     
     //stock app

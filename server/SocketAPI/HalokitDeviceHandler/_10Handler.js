@@ -8,7 +8,7 @@ var Const = require("../../lib/consts");
 
 
 
-
+//响应设置
 var _10Handler = function(){
     
 }
@@ -17,10 +17,13 @@ var _10Handler = function(){
  _10Handler.prototype.attach = function(param,stock,io) {
  	// body...
 	
+ 		var self  = this;
+		var deviceID = param.deviceid||param.deviceID;;
+		var func = param.func;
+  		var content = param.content
+	
 
-	stock.send("");
-
- 	Observer.send(this, Const.notificationDeviceLight, param);
+ 	Observer.send(this, Const.notificationDeviceResponse, param);
 
 
 

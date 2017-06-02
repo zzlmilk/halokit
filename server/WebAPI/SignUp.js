@@ -25,10 +25,13 @@ _.extend(SignUpHandler.prototype,RequestHandlerBase.prototype);
 SignUpHandler.prototype.attach = function(router){
 		var self = this;
 
+
+	
+
 		router.post('/',function(request,response){
 			 self.validate(request.body,function(err){
 
-					var clinetID = request.body.clinetID;
+					var clientID = request.body.clientID;
 			        var deviceID = request.body.deviceID;
 			        var language = request.body.language;
 			        var deviceType = request.body.deviceType;
@@ -39,7 +42,7 @@ SignUpHandler.prototype.attach = function(router){
 			 			 var userModel = UserModel.get();
 
 		               	 var model = new userModel({
-		                    clinetID:clinetID,		                    
+		                    clientID:clientID,		                    
 		                    deviceID: deviceID,
 		                    language: language,
 		                    deviceType: deviceType,
@@ -54,47 +57,27 @@ SignUpHandler.prototype.attach = function(router){
                        			 return;	
 		               		}
 
+
 		               		self.successResponse(response,Const.responsecodeSucceed,{
 		               			user:userModelResult
 		               		})
 		               	}) ;
 
-			 		}
-			 		else {
-
-               			 self.successResponse(response,err);
-                
+			 		}	
+			 		else {			 		
+               			 self.successResponse(response,err);                
          				  }
 
 			 })
 
 
 
-		})
+    });
 
-
-		router.get('/',function(request,response){
-
-			var  userModel = UserModel.get();
-
-				userModel.count({username:"zzl"},function(err,result){
-						self.successResponse(response,Const.responsecodeSucceed,result)
-				})
-
-			// var model  = new userModel({
-			// 		username :"zzl"
-			// })
-			// model.save(function(err,result){
-			// 			if (err) {}
-			// 			else{
-
-			// 	self.successResponse(response,Const.responsecodeSucceed,{user:result})
-			// 			}
-			// })
-
-		})
 
 }
+
+
 
 
 
@@ -106,7 +89,7 @@ SignUpHandler.prototype.validate = function(requestBody,callBack){
     //self.errorResponse(response,Const.httpCodeServerError);
 
 
-  		if(_.isEmpty(requestBody.clinetID))            	
+  		if(_.isEmpty(requestBody.clientID))            	
             callBack(Const.resCodeSignUpNoClientID)
 
         if(_.isEmpty(requestBody.deviceID))            	
@@ -125,7 +108,7 @@ SignUpHandler.prototype.validate = function(requestBody,callBack){
 
     var userModel = UserModel.get();
 
-    userModel.findOne({ clinetID: requestBody.clinetID },function (err, user) {
+    userModel.findOne({ clientID: requestBody.clientID },function (err, user) {
 
     	if(!_.isNull(user)){
     			callBack(Const.resCodeSignUpTelNumberDuplicated)

@@ -3,10 +3,14 @@ var router = express.Router();
 
 var bodyParser = require("body-parser");
 var _ = require('lodash');
+var logger = require('morgan');
+
 
 
 var init = require('../lib/init.js');
 
+var log = require("../lib/log");
+var log4js = require('log4js');  
 
 
 
@@ -16,9 +20,16 @@ var WebAPIMain = {
 
 				var self = this;
 
-	
-				app.use('/',express.static(__dirname + '/../../../public'));
+				app.use('/',express.static(__dirname + '/../../doc/API'));
+				app.use(logger('dev'));
 				app.use(bodyParser.json());
+
+				app.use(log4js.connectLogger(log.api));
+				
+				
+
+
+
 
 				//测试
 				router.use("/test", require('./TestHandler'));
@@ -28,19 +39,25 @@ var WebAPIMain = {
 				router.use("/user/signup", require('./SignUp'));
 				router.use("/user/signin", require('./SignIn'));
 
-				router.use("/user/resetpassword", require('./ResetPassword'));
 				
-				//搜索用户
-				router.use("/search/user", require('./SearchUser'));
+				//device
+				router.use("/device/bindDevice", require('./BindDevice'));
+				router.use("/device/unbindDevice", require('./UnbindDevice'));
+				
+
+				// 电子围栏
+				router.use("/user/rail", require('./Rail'));
+				
 
 				
 		        //24小时轨迹
-				router.use("/halokit/24g3", require('./Halokit'));		
+				router.use("/halokit/24g3", require('./HalokitG3'));		
+
+				
+				router.use("/device/signup", require('./DeviceSignUp'));
 
 
-
-
-				router.use("/pet/a",require('./Pet'));        
+			   
 
 
 				//api版本控制

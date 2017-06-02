@@ -14,14 +14,39 @@ var DatabaseManager = require('../lib/DatabaseManager');
 UserModel.prototype.init = function(mongoose){
 
 	 this.schema = new mongoose.Schema({
-        clientID:{type:String, index:true}, //个推ID
-        deviceID:{type:String,index:true}, //设备ID
+        clientID:{type:String, index:true}, //个推ID       
+        cellPhone:Number,    
+        password:String, 
+        deviceID:String,  
+        devices:[
+                {
+                    deviceID:String,
+                    deviceName:String,
+                    status:Number ,  //1激活  2已解除绑定
+                    created:Number,
+                }
+            ],
+         pets:[{
+                petID:{type:String, index:true}, //个推ID   
+                petName:String,                
+         }],
+         rail:{
+                  latitude:String,
+                  longitude:String,
+                  radius:Number,
+                  status:{type:Number,default :1}, //1 开启0 关闭
+                  created: Number,    
+          },
         language:String,
         created: Number,        
         uuid : String,
         deviceType : String,
         appVersion : String,
+        ip:String,        
+        apptype:Number  // 1国内 2国际版本
     });
+
+
 
     this.model = mongoose.model(Config.dbCollectionPrefix + "users", this.schema);
 }
@@ -32,8 +57,6 @@ UserModel.get = function(){
     return DatabaseManager.getModel('User').model;    
 }
     
-
-
 
 
 // class methods
@@ -47,7 +70,6 @@ UserModel.getUserById = function(userId,callBack){
                              
         if(callBack)
             callBack(result);    
-    
     });
     
 };

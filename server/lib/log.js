@@ -1,21 +1,42 @@
 var log4js = require('log4js');  
 var path = require('path');
 
-console.log(__dirname);
+
+var path = require('path');
+var resolve = path.resolve('../Log');
+
 
 
 
 log4js.configure({
 		appenders:[
-		{type:'console'},
+        {
+            "type": "console",
+             "category": "console"
+        },   
 		{
-			type:'file' ,filename:"log.log" , "maxLogSize":2048 ,category:'dateFile'
-		}]
+			type:'dateFile' ,
+            filename:resolve+"/log.log" ,            
+            maxLogSize:"2048 ",
+            encoding:"UTF-8",
+            category:'socketLog'
+		},
+        {
+            type:'dateFile' ,
+            filename:resolve+"/apilog.log" ,            
+            maxLogSize:"2048 ",
+            encoding:"UTF-8",
+            category:'api'
+        }]
 })
 
 
 
-var logger = log4js.getLogger('dateFile');
+var logger ={
+
+         socket:log4js.getLogger('socketLog'),
+         api:log4js.getLogger('dateFile'),
+}
 
 
 module["exports"]  = logger;

@@ -35,7 +35,6 @@ DatabaseManager.init(function(success){
 		WebAPI.init(app);
 		SocketAPI.init(io);
 		OnlineUsersManager.init();
-
 		 server.listen(Conf.port, function(){
             console.log('Server listening on port ' + Conf.port + '!');
         });

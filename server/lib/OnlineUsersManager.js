@@ -12,13 +12,23 @@ var OnlineUsersManager = {
 
 	 users:null,
      devices:null,
+     connections:null,
+
 	init:function(){
         this.users = [];
         this.devices = [];
+        this.connections= [];
+    },
+
+
+    addConnection:function(socket){
+        
+        this.connections.push(socket);      
+                                   
     },
 
     addUser:function(user,socketId){
-       
+
         user.socketId = socketId;  
         this.users.push(user);      
                    

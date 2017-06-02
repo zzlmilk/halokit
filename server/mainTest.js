@@ -1,4 +1,7 @@
 var socket = require('socket.io');
+
+
+
 var express = require('express');
 var http = require('http');
 
@@ -6,15 +9,12 @@ var Conf = require('./lib/init.js');
 
 
 
-Conf.host = "localhost";
-Conf.port = 8081;
-
+Conf.host = "127.0.0.1";
+Conf.port = 3031;
 Conf.urlPrefix = '/sun';
-Conf.socketNameSpace = '/suntest';
+Conf.socketNameSpace = '／suntest';
 Conf.dbCollectionPrefix = '';
 Conf.databaseUrl = "mongodb://localhost/halokit_test";
-
-
 
 
 
@@ -23,6 +23,7 @@ var app = express();
 var server = http.createServer(app);
 var port = Conf.port;
 var io = socket.listen(server);
+
 
 
 
@@ -52,7 +53,7 @@ DatabaseManager.init(function(success){
 
             
         server.listen(Conf.port, function(){
-           // console.log('Server listening on port ' + Conf.port + '!');
+            console.log('Server listening on port ' + Conf.port + '!');
         });
 
     }

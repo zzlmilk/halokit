@@ -5,6 +5,7 @@ var Utils = require('../../lib/utils');
 
 
 
+var TcpSocketAPIHandler = require('../TcpSocketAPIHandler');
 
 
 var _0BHandler = function(){
@@ -16,20 +17,25 @@ var _0BHandler = function(){
  	// body...
 	
 
+ 	
 
 	var deviceID = param.deviceid;
 	var deviceModel = DeviceModel.get();
 
 
 	param.content = Utils.now();		
-	stock.send(param)
-
 	
+	
+
 	deviceModel.findOne({deviceID:param.deviceid},function(err,device){
 
 		if (!device) {			
 			console.log("no device");
-			stock.send(param)
+			stock.write(param)
+
+		}
+		else{
+			TcpSocketAPIHandler.wirteToDevice(deviceID,param)
 		}
 		
 	// var d = new Date();

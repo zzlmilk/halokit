@@ -12,6 +12,7 @@ var _ = require('lodash');
     function Utils() {
     };
 
+    
     // Header -----------------------------------------------
     Utils.prototype.getRandomStr = getRandomStr;
     Utils.prototype.now = now;
@@ -22,6 +23,12 @@ var _ = require('lodash');
     Utils.prototype.generateYYYYMMDDHHMMSS = generateYYYYMMDDHHMMSS;
     Utils.prototype.isObjectId = isObjectId;
     Utils.prototype.isEmpty = isEmpty;
+    Utils.prototype.ParseJsonToString = ParseJsonToString;
+    Utils.prototype.ParseStringToJson = ParseStringToJson;
+    Utils.prototype.CaculateDistance = CaculateDistance;
+    
+
+
 
 
     
@@ -36,6 +43,19 @@ var _ = require('lodash');
     
         return text;
     }
+
+    function ParseJsonToString(data){
+         var string  = data.toString();
+         string = JSON.parse(string);
+         return string;
+    }
+
+    function ParseStringToJson(data){
+         // data  = data.toString();
+         // data = JSON.parse(data);
+         // return data;
+    }
+    
     
     function now(){
         Date.now = Date.now || function() { return +new Date; }; 
@@ -140,6 +160,48 @@ var _ = require('lodash');
         
     }
 
+
+
+
+    
+    
+
+    function getRad(d){ 
+        var PI = Math.PI; 
+        return d*PI/180.0; 
+    } 
+
+
+     function CaculateDistance(lat1,lng1,lat2,lng2){
+
+     
+
+        lat1= parseFloat(lat1);
+        lng1= parseFloat(lng1);
+        lat2= parseFloat(lat2);
+        lng2= parseFloat(lng2);
+
+        var EARTH_RADIUS = 6378137.0; //单位M 
+
+        var radLat1 = getRad(lat1); 
+        var radLat2 = getRad(lat2); 
+
+
+       
+
+        var a = radLat1 - radLat2; 
+
+        var b = getRad(lng1) - getRad(lng2); 
+        var s = 2*Math.asin(Math.sqrt(Math.pow(Math.sin(a/2),2) + Math.cos(radLat1)*Math.cos(radLat2)*Math.pow(Math.sin(b/2),2))); 
+        s = s*EARTH_RADIUS; 
+        s = Math.round(s*10000)/10000.0; 
+
+        return s;
+
+     }
+
+
+    
 
 
         

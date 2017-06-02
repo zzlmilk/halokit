@@ -20,20 +20,17 @@ DeviceModel.prototype.init = function(mongoose){
         onlineStatus:Boolean,
         lastOnlineTime:Number, //上一次连接时间
         offlineTime:Number, //断开连接        
-   		activeTime:Number, //激活时间
-   	  	version:String ,  //设备版本   	
+   	  	activeTime:Number, //激活时间
+   	  	version:String ,  //设备版本 
+        currentMode:  String, //	 当前模式
           	       	         
     });
 
-	
-    	
+   
     this.model = mongoose.model(Config.dbCollectionPrefix + "devices", this.schema);
 }
 
-
-
-
-
+    
 
 DeviceModel.get = function(){
     

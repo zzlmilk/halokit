@@ -21,40 +21,47 @@ var DeviceActionHandler = function(){
 
 
 
-DeviceActionHandler.prototype.attach = function(io,socket){
+DeviceActionHandler.prototype.attach = function(param,socket){
 
-
-  socket.on('message',function(param){
+    
+         
         var func = param.func;
         var deviceID = param.deviceid || param.deviceID;
+        var clientID = param.clientID || param.clientid;
+
+        param.deviceID = deviceID;
+        param.clientID = clientID;
+         
+        
+         if(!_.isEmpty(clientID)){
+            console.log('err',"have clientID ");
+            socket.write('socketerror: have clientID');                               
+         }
 
 
+        if(_.isEmpty(deviceID)){            
+            console.log('err',"no deviceID ");              
+            socket.write('socketerror:no deviceID');               
+            return;
+        }
 
 
          if(_.isEmpty(func)){            
-            console.log('err',"no func ");
-              
-            socket.emit('socketerror', {code:Const.resCodeSocketDeviceNoFunc});               
+            console.log('err',"no func ");              
+            socket.write("socketerror:no func");               
             return;
         }
 
 
 
-          if(_.isEmpty(deviceID)){            
-            console.log('err',"no deviceID ");              
-            socket.emit('socketerror', {code:Const.resCodeSocketDeviceNoFunc});               
-            return;
-        }
 
-
-        
+        var io = null;
         
         switch(func)
         { 
             case Const.halokitOrderConnect:            
             require('./HalokitDeviceHandler/_00Handler').attach(param,socket,io);
             break;
-
 
 
             case  "01":
@@ -91,10 +98,11 @@ DeviceActionHandler.prototype.attach = function(io,socket){
             default:
              
              console.log('err',"unknow func ",func);
+            socket.write("socketerror:unknow func");   
 
         }
 
-  });
+
 
 	
 }

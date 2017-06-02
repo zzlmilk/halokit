@@ -22,45 +22,6 @@ _.extend(SignInHandler.prototype,RequestHandlerBase.prototype);
 
 SignInHandler.prototype.attach = function(router){
 		var self = this;
-	/**
-     * @api {post} /user/signin SignIn
-     * @apiName Login
-     * @apiGroup WebAPI
-     * @apiDescription Login to the system and get api token
-
-     * @apiParam {string} username Users Name
-     * @apiParam {string} password Password
-
-     * @apiSuccessExample Success-Response:
-            {
-                success: 1,
-                data: {
-                    user: {
-                        _id: '563a072bd9b1aef3e668e0da',
-                        telNumber: '15901794453',                        
-                        password: 'ce2fb993e7725577291f7fd1d30a57c7c4989787',
-                        created: 1446643499398,
-                        __v: 0
-                    },
-                    token: 'G3zKH48LwfrVfqVWTb8wTEnDmfyE8tBi'
-                }
-            }
-
-       clinetID:String, //个推ID
-        deviceID:String, //设备ID
-        language:String,
-        created: Number,
-        token : {
-            token: String,
-            generated: Number
-        },
-        device : {
-            uuid : String,
-            deviceType : String,
-            appVersion : String
-        },
-    */
-
 
 
      router.post('/',function(request,response){
@@ -72,13 +33,7 @@ SignInHandler.prototype.attach = function(router){
         var language = request.body.language;
         var deviceType = request.body.deviceType;
         var appVersion = request.body.appVersion;
-
-
-
-        
-
-                
-
+            
     	userModel.findOne({ 
     	    telNumber: telNumber,
     	    password: password
