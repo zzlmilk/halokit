@@ -12,7 +12,7 @@ var helper = require("../Test/helper");
 //var username = "test" + global.getRandomStr() ;
 describe('WEB API bind device', function () {
 		var params ={
-		clientID:"test", //个推ID
+		clientID:"test1", //个推ID
         deviceID:"861933030013924", //设备ID
         language:"String",
         uuid : "String",
@@ -42,14 +42,6 @@ describe('WEB API bind device', function () {
 		          });   
 
 		});
-
-
-
-
-
-
-
-
 
 });
 

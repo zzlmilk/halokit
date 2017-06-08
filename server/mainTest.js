@@ -1,20 +1,22 @@
 var socket = require('socket.io');
+var log = require("./lib/log");
 
 
 
 var express = require('express');
 var http = require('http');
-
+var net  =require('net');
 var Conf = require('./lib/init.js');
 
 
 
 Conf.host = "127.0.0.1";
-Conf.port = 3031;
-Conf.urlPrefix = '/sun';
-Conf.socketNameSpace = '／suntest';
+Conf.port = 3031;  //api端口
+Conf.sockPort = 3030;   
+Conf.urlPrefix = '/halokit';
 Conf.dbCollectionPrefix = '';
 Conf.databaseUrl = "mongodb://localhost/halokit_test";
+
 
 
 
@@ -24,8 +26,7 @@ var server = http.createServer(app);
 var port = Conf.port;
 var io = socket.listen(server);
 
-
-
+      
 
 var WebAPI = require('./WebAPI/WebAPIMain');
 var SocketAPI = require('./SocketAPI/SocketAPIHandler');
@@ -33,7 +34,9 @@ var OnlineUsersManager = require('./lib/OnlineUsersManager');
 var DatabaseManager = require('./lib/DatabaseManager');
 var BridgeManager = require('./lib/BridgeManager');
 
+var TcpSocketAPIHandler = require('./SocketAPI/TcpSocketAPIHandler');
 
+var AGPSHandler = require("./lib/AGPS");
 
 
 DatabaseManager.init(function(success){
@@ -45,16 +48,25 @@ DatabaseManager.init(function(success){
 
     } else {
 
-               
-        WebAPI.init(app);
-        SocketAPI.init(io);
         OnlineUsersManager.init();
+        WebAPI.init(app);       
         BridgeManager.init();
+        SocketAPI.init(io);
 
+
+       //AGPS下载
+       //  AGPSHandler.init();
+
+      TcpSocketAPIHandler.init(Conf.sockPort);
+
+
+
+    server.listen(Conf.port, function(){
+          log.api.info('Server listening on port ' + Conf.port + '!');
+       });
             
-        server.listen(Conf.port, function(){
-            console.log('Server listening on port ' + Conf.port + '!');
-        });
+
+
 
     }
 

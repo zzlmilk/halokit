@@ -18,10 +18,8 @@ var Utils = require("../lib/utils");
 
 
 var RailHandler = function(){}
+
 _.extend(RailHandler.prototype,RequestHandlerBase.prototype);
-
-
-
 
 RailHandler.prototype.attach = function(router){
 		var self = this;
@@ -50,7 +48,9 @@ RailHandler.prototype.attach = function(router){
 */
 
      router.post('/create',function(request,response){
-        self.createAndUptare(request.body,function(err,result){
+
+
+        self.createAndUptare(request.body,response,function(err,result){
                 if (!err) {
                     self.successResponse(response,Const.responsecodeSucceed,{rail:result.rail});    
                 };
@@ -61,7 +61,7 @@ RailHandler.prototype.attach = function(router){
 
 
      /**
-     * @api {post} /user/rail1/uptdate  更新电子围栏.
+     * @api {post} /user/rail/update  更新电子围栏.
      * @apiName 更新电子围栏.
      * @apiGroup GlobalWebApi
      * @apiDescription 更新电子围栏
@@ -85,7 +85,11 @@ RailHandler.prototype.attach = function(router){
     
 
      router.post('/update',function(request,response){
-        self.createAndUptare(request.body,function(err,result){
+
+        var log = require("../lib/log");
+        log.api.info("update 参数"+request.body);
+
+        self.createAndUptare(request.body,response,function(err,result){
                 if (!err) {
                     self.successResponse(response,Const.responsecodeSucceed,{rail:result.rail});    
                 };
@@ -117,10 +121,10 @@ RailHandler.prototype.attach = function(router){
 
      router.get('/getRail',function(request,response){
 
-         var clientID = request.body.clientID;
+         var clientID = request.query.clientID || request.query.clientid;
+
          if(_.isEmpty(clientID)){
             console.log('err',"no clientID ");
-
             self.successResponse(response,Const.resCodeSignUpNoClientID);  
             return;
          }
@@ -130,12 +134,18 @@ RailHandler.prototype.attach = function(router){
         userModel.findOne({
                 clientID:clientID
         },function(err,result){
-            if (err) 
+            if (err ) 
                    {
                       console.log(err);
-                   }
 
-                self.successResponse(response,Const.responsecodeSucceed,{rail:result.rail});  
+                   }
+                if (result) {
+                        self.successResponse(response,Const.responsecodeSucceed,{rail:result.rail});  
+                }
+                else{
+                     self.successResponse(response,Const.resCodeUnBindDeviceNodata); 
+                } 
+                            
         })
             
 
@@ -145,18 +155,23 @@ RailHandler.prototype.attach = function(router){
     
 }
 
-RailHandler.prototype.createAndUptare =function(params,callback){
+RailHandler.prototype.createAndUptare =function(params,response,callback){
 
-        var clientID = params.clientID;
-        var deviceID = params.deviceID;
+        var self = this;
+     
+        
+        var clientID = params.clientID || params.clientid;
+        var deviceID = params.deviceID || params.deviceid; 
+        
         var latitude = params.latitude;
         var longitude = params.longitude;
+        var status = params.status;
+
         var radius = params.radius;  
 
 
         if(_.isEmpty(clientID)){
             console.log('err',"no clientID ");
-
             self.successResponse(response,Const.resCodeSignUpNoClientID);  
             return;
          }
@@ -171,7 +186,7 @@ RailHandler.prototype.createAndUptare =function(params,callback){
 
          if(_.isEmpty(longitude)){            
             console.log('err',"no longitude ");              
-              self.successResponse(response,Const.resCodeNoLongitude);             
+            self.successResponse(response,Const.resCodeNoLongitude);             
             return;
         }
          if(_.isEmpty(latitude)){            
@@ -186,21 +201,34 @@ RailHandler.prototype.createAndUptare =function(params,callback){
             return;
         }
 
+        if(_.isEmpty(status)){            
+            console.log('err',"no status ");              
+            self.successResponse(response,Const.resCodeNoRailStatus);                 
+            return;
+        }
+
 
     var userModel = UserModel.get();       
         userModel.findOne({ 
             clientID: clientID,
                       
         },function (err, user) {
-            user.rail.latitude = latitude;
-            user.rail.longitude = longitude;
-            user.rail.radius = radius;
-             user.rail.created = Utils.now();    
-             user.save(function(err,result){
-                callback(null,result);                
-             })
+            if(!user){
+                self.successResponse(response,Const.resCodeUnBindDeviceNodata); 
 
-           
+            }
+            else{
+                     user.rail.latitude = latitude;
+                     user.rail.longitude = longitude;
+                     user.rail.radius = radius;
+                     user.rail.status = status;
+                     user.rail.created = Utils.now();    
+                     user.save(function(err,result){
+                        callback(null,result);                
+                    })
+            }
+
+
         
         });
 

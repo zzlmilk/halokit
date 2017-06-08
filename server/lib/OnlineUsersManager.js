@@ -26,13 +26,17 @@ var OnlineUsersManager = {
         this.connections.push(socket);      
                                    
     },
+    removeConnection:function(socketId){
+     var index = _.findIndex(this.connections, function(connection) {
+      if(connection) return connection.socketId == socketId; else return false});
+        delete this.connections[index];
+    },
 
     addUser:function(user,socketId){
 
         user.socketId = socketId;  
         this.users.push(user);      
                    
-                  
     },
     removeUser:function(socketId){
 
@@ -107,9 +111,15 @@ var OnlineUsersManager = {
                 
         if(deviceFound)
             return deviceFound.socketId;            
+    },
+
+    clearSocketBysocketId:function (socket_id) {
+        this.removeConnection(socket_id);
+        this.removeUser(socket_id);
+        this.removeDevice(socket_id);
+
+        
     }
-
-
 
 
 }

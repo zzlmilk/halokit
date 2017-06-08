@@ -6,7 +6,14 @@ var path = require('path');
 var resolve = path.resolve('../Log');
 
 
-
+/*
+     * Predefined Formats:
+     * - combined: :remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"
+     * - common:  :remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length]
+     * - dev: :method :url :status :response-time ms - :res[content-length]
+     * - short: :remote-addr :remote-user :method :url HTTP/:http-version :status :res[content-length] - :response-time ms
+     * - tiny: :method :url :status :res[content-length] - :response-time ms
+     */
 
 log4js.configure({
 		appenders:[
@@ -19,6 +26,8 @@ log4js.configure({
             filename:resolve+"/log.log" ,            
             maxLogSize:"2048 ",
             encoding:"UTF-8",
+
+
             category:'socketLog'
 		},
         {
@@ -26,8 +35,17 @@ log4js.configure({
             filename:resolve+"/apilog.log" ,            
             maxLogSize:"2048 ",
             encoding:"UTF-8",
+              backups:4,
             category:'api'
-        }]
+        },
+        {
+            type:'dateFile' ,
+            filename:resolve+"/error.log" ,            
+            maxLogSize:"2048 ",
+            encoding:"UTF-8",
+            category:'error'
+        },
+        ]
 })
 
 
@@ -35,7 +53,8 @@ log4js.configure({
 var logger ={
 
          socket:log4js.getLogger('socketLog'),
-         api:log4js.getLogger('dateFile'),
+         api:log4js.getLogger('api'),
+         err:log4js.getLogger('error'),
 }
 
 

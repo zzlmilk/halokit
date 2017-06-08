@@ -63,13 +63,24 @@ global.JsonParse = function(data){
 
 
 
+global.clearSocket = function(){
+
+          if (global.devicesocket)          
+           global.devicesocket.end();
+
+       if (global.usersocket)          
+           global.usersocket.end();
+
+
+       
+}
+
 global.userTcpSocketLogin =function(cb,params){
      var net = require('net') ;
      var socketURL = global.socketURL;
      var port  = global.prot ;
 
-     var _devicesocket=null;
-     var _usersocket =null;
+            
 
      if(!params){
         var params = {
@@ -84,7 +95,8 @@ global.userTcpSocketLogin =function(cb,params){
             func:"00"
         };
 
-    var deviceclient = net.connect({port: port}, function() {
+     var deviceclient = new net.Socket();
+     deviceclient = net.connect({port: port}, function() {
         
         global.devicesocket = deviceclient;   
         deviceclient.write(JSON.stringify(deviceparams));    
@@ -92,7 +104,9 @@ global.userTcpSocketLogin =function(cb,params){
     }); 
 
        deviceclient.on('data',function(data){
-        var client1 = net.connect({port: port}, function() {         
+
+         var client1 = new net.Socket();
+         client1 = net.connect({port: port}, function() {         
         client1.write(JSON.stringify(params));  
 
            global.usersocket = client1;  
@@ -107,12 +121,12 @@ global.userTcpSocketLogin =function(cb,params){
                                 
                 }
          catch(e){
-               console.log(data);
-                //console.log(e);
+               //console.log(data);
+                console.log(e);
                   return;
             } 
 
-             cb(1);
+             cb(data);
 
            
             

@@ -12,10 +12,10 @@ var helper = require("../Test/helper");
 //var username = "test" + global.getRandomStr() ;
 describe('WEB API unbind device', function () {
 		var params ={
-		clientID:"47ec41b2a183782de20478e4fb8d381d", //个推ID
-        deviceID:"861933030013924", //设备ID       
+			clientID:"47ec41b2a183782de20478e4fb8d381d", //个推ID
+	        deviceID:"861933030013924", //设备ID       
 		}
-
+		
 		describe('/device/unbindDevice 解除设备绑定', function () {
 				 it('Can  unbind', function (done) {
 			            request(app)

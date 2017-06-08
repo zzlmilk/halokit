@@ -17,8 +17,9 @@ HalokitG3Model.prototype.init = function(mongoose){
 
 	 this.schema = new mongoose.Schema({
         deviceID:{ type: String, index: true },
+        // clientID:{ type: String, index: true },
         //content:String,      
-        g3:{
+        g3data:{
         		myr:String,
         		sfm:String,
         		gpstype:String,
@@ -30,20 +31,30 @@ HalokitG3Model.prototype.init = function(mongoose){
                 direction:String,
                 altitude:String,
                 steps:String,
-                collCount:String,
+                collCount:String,      //电量           
         },
+        g3info:{},
         created: Number,   
           	        	        
     });
 
     this.model = mongoose.model(Config.dbCollectionPrefix + "HalokitG3s", this.schema);
 }
+
+
+
 	
 HalokitG3Model.get = function(){
     
     return DatabaseManager.getModel('HaloKitG3').model;
     
 }
+
+
+
+
+
+
 
 
 module["exports"] = HalokitG3Model;

@@ -80,6 +80,7 @@ BindDeviceHandler.prototype.attach = function(router){
 		                    language: language,
 		                    deviceType: deviceType,
 		                    appVersion: appVersion,
+		                    rail:null,
 		                    created: Utils.now()          
 		                });	
 		                	               	
@@ -151,18 +152,23 @@ BindDeviceHandler.prototype.validate = function(requestBody,callBack){
       
 
 
-    var userModel = UserModel.get();			
+    var userModel = UserModel.get();
+
+
 
     userModel.findOne({ clientID: requestBody.clientID },function (err, user) {    	    
+
+   
 		
     	if(!_.isNull(user)){    
 			var device = user.devices[0];
+
 				if (!_.isNull(device)) {
 						if (device.deviceID == requestBody.deviceID && device.status ==1)
 						{
-							callBack(Const.resCodeBindDeviceNumberDuplicated,null)
+							callBack(Const.resCodeBindDeviceNumberDuplicated,user)
 						}
-						else{
+						else {
 							 callBack(Const.resCodeBindDeviceNosuppotMuitBind,user)
 						}
 				};

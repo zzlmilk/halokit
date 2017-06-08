@@ -12,9 +12,9 @@ var _ = require('lodash');
     function Utils() {
     };
 
-    
     // Header -----------------------------------------------
     Utils.prototype.getRandomStr = getRandomStr;
+    Utils.prototype.getRandomCode = getRandomCode;
     Utils.prototype.now = now;
     Utils.prototype.sendEmail = sendEmail;
     Utils.prototype.toObjectId = toObjectId;
@@ -27,11 +27,7 @@ var _ = require('lodash');
     Utils.prototype.ParseStringToJson = ParseStringToJson;
     Utils.prototype.CaculateDistance = CaculateDistance;
     
-
-
-
-
-    
+        
     // Implementation ---------------------------------------
     function getRandomStr(){
     
@@ -42,6 +38,17 @@ var _ = require('lodash');
             text += possible.charAt(Math.floor(Math.random() * possible.length));
     
         return text;
+    }
+
+    function getRandomCode(){
+    
+        var code = "";
+        var possible = "0123456789";
+    
+        for( var i=0; i < 4; i++ )
+            code += possible.charAt(Math.floor(Math.random() * possible.length));
+    
+        return code;
     }
 
     function ParseJsonToString(data){
@@ -59,10 +66,28 @@ var _ = require('lodash');
     
     function now(){
         Date.now = Date.now || function() { return +new Date; }; 
-        
         return Date.now();
-        
     }
+
+
+
+
+
+
+    function timeTest(){
+        //北京时间的时区为东8区，起点时间实际为：'1970/01/01 08:00:00
+        var time = now();
+         console.log(time)
+          var testDate1 = new Date(time);
+        console.log(testDate1)
+        time = time - (16 * 60 * 60 * 1000 )
+        console.log(time)
+       // 
+        var testDate = new Date(time);
+        console.log(testDate)
+    }
+
+    
     
     function generateSecret(time){
         
@@ -162,9 +187,6 @@ var _ = require('lodash');
 
 
 
-
-    
-    
 
     function getRad(d){ 
         var PI = Math.PI; 

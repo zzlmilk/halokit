@@ -1,3 +1,4 @@
+
 var mongoose = require('mongoose');
 var _ = require('lodash');
 var async = require('async');
@@ -15,6 +16,7 @@ var PushNotificationManager = {
     // receives user id to send push
      
 }
+
 
 
 

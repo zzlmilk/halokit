@@ -57,7 +57,7 @@ var BridgeManager = {
                         data:{device:device}
         }
 
-
+        
          TcpSocketAPIHandler.wirteToUser(deviceID,stockData)
 
 
@@ -116,6 +116,7 @@ var BridgeManager = {
            *  {"state":200,"msg":"响应设置","servercode":"10","deviceid":"861933030013924","data":{"device":{"currentMode":"05"}}}
          * @apiUse DeviceNotOnline
      */
+     console.log("notificationDeviceResponse",obj)
 
         if (!obj) {
             return;
@@ -134,6 +135,8 @@ var BridgeManager = {
                         deviceid:obj.deviceID,
                         data:{device:device}
         }
+
+
 
 
 
@@ -175,19 +178,20 @@ var BridgeManager = {
                         data:{g3:obj}
         }
 
+
+
         
+
      TcpSocketAPIHandler.wirteToUser(obj.deviceID,stockData)
-    
-        
 
-        //PushNotificationManager 推送
-
+     //TcpSocketAPIHandler.wirteToUser(obj.deviceID,stockData1);    
+     //PushNotificationManager 推送
+     
  });
 
 
-
-
-        /**
+        
+/**
      * @api {socket} "func:0D" 电子围栏预警
      * @apiName func:0D
      * @apiGroup GlobalAPPSocket 
@@ -198,15 +202,14 @@ var BridgeManager = {
   msg: '电子围栏警告:距离13107018.5732',
   servercode: '0D',
   deviceid: '861933030006506',
-  data: { distance: 13107018.5732 } }
-     */
-
-
+  data: { distance: 13107018.5732 ,g3:[object]} }
+*/
 
     
      //电子围栏预警 当坐标变化时
      Observer.subscribe(this, Const.notificationRAILResponse, function(who, obj) {
             
+      
         if (!obj) {
             return;
         };
@@ -221,46 +224,55 @@ var BridgeManager = {
                     console.log(err);
                     return;
                 }
-            var rail = user.rail;
 
-          
+        var rail = user.rail;
 
+
+       
+        
          if( _.isEmpty(rail)){            
             console.log('err',"no  rail");                      
             return;
         }
 
-         var dis =    Utils.CaculateDistance(rail.latitude,rail.longitude,obj.g3.latitude,obj.g3.longitude);
+         var dis =    Utils.CaculateDistance(rail.latitude,rail.longitude,obj.g3data.latitude,obj.g3data.longitude);
 
          // dis = 80;            
         //超出电子围栏｀
-         if(dis > rail.radius){
-            var stockData = {
+         if(dis > rail.radius && radius.status ==1){
+            var stockData1 = {
                         state:200,
                         msg:"电子围栏警告",
                         servercode:"0D",
                         deviceid:obj.deviceID,
-                        data:{distance:dis}
+                        data:{g3:obj,
+                            distance:dis
+                    }
             }
+            
 
-           
 
-             TcpSocketAPIHandler.wirteToUser(obj.deviceID,stockData)   
+            TcpSocketAPIHandler.wirteToUser(obj.deviceID,stockData1);
+
          }
          else{
-            var stockData = {
+                 var stockData = {
                         state:200,
-                        msg:"电子围栏不警告"+dis,
-                        servercode:"0D",
+                        msg:"位置推送",
+                        servercode:"01",
                         deviceid:obj.deviceID,
-                        data:{rail:rail}
-            }
-            console.log("[电子围栏不警告]" ,dis);
-            //TcpSocketAPIHandler.wirteToUser(obj.deviceID,stockData)  
+                        data:{g3:obj}
+             }
+                              
+              TcpSocketAPIHandler.wirteToUser(obj.deviceID,stockData);
+           
+             //TcpSocketAPIHandler.wirteToUser(obj.deviceID,stockData)  
          }
 
 
-        });
+
+
+    });
 
 
 

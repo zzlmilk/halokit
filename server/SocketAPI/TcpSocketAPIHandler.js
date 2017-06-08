@@ -30,14 +30,13 @@ var TcpSocketAPIHandler = {
 				var stockId =  Utils.getRandomStr(32);
 				socket.id = stockId;
 
+
 				OnlineUsersManager.addConnection(socket);
-
-
 
 				  socket.on('data',function(param){
 
 
-					 var paramString = param.toString('utf-8');
+				 var paramString = param.toString('utf-8');
 						
 
 					 try {
@@ -52,16 +51,14 @@ var TcpSocketAPIHandler = {
    					 		//console.log(e);	
    					 		//socket.destroy();   					 	  						 		
 			   //log.socket.info("[接收" + socket.remoteAddress+":"+ socket.remotePort + "]" + param.toString());
-					 		 	return;
+					 		return;
    					 }
 
-   					// log.socket.info("[建立连接" + socket.remoteAddress+":"+ socket.remotePort+ "]");
-					 
-
-
+					
 					var func = param.func;
 			        var deviceID = param.deviceid || param.deviceID;
 			        var clientID = param.clientID || param.clientid;
+
 
 
 			        if(!_.isEmpty(clientID)){
@@ -77,39 +74,54 @@ var TcpSocketAPIHandler = {
 
 				});
 
-
+					
 				// 断开连接事件
 			    socket.on('close', function(conn) {
 			    	//console.log(conn)
+			    	//console.log("socket close");			    	
+			    	OnlineUsersManager.clearSocketBysocketId(socket.id)
+			    	socket.end();			 
 			        
 			    });
+
+
+
+
 
 			    socket.on('error', function(error) {
-			    	
-			    	socket.destroy()
+			    	console.log("socket error");
+			    	// var  err = new Error(error);			    
+			    	// console.log(err);
+			    	OnlineUsersManager.clearSocketBysocketId(socket.id)
+			    	socket.end()
 			        
 			    });
 
 
-			   var waitTime = 10;
 
-  				//设置超时时间
-			  // socket.setTimeout(1000 * waitTime,function() {
-			  //   console.log('客户端在' + waitTime + 's内未通信，将断开连接...');
 
-			  // });
-					// 		  //监听到超时事件，断开连接
-				 //  socket.on('timeout', function() {
-				 //  	console.log("timeout")
-				 //    socket.end();
-				 //  });
+				//设置超时时间
+			  var waitTime = 10*100;
+			  socket.setTimeout(1000 * waitTime,function() {
+			  	
+			    console.log('客户端在' + waitTime + 's内未通信，将断开连接...');
+			    	
+			  });
+
+			 //监听到超时事件，断开连接
+			 socket.on('timeout', function() {
+			 		 console.log("socket timeout");
+				     OnlineUsersManager.removeConnection(socket.id);
+				     OnlineUsersManager.removeUser(socket.id);
+				     OnlineUsersManager.removeDevice(socket.id);
+				     socket.end();
+				  });
 
 			//	console.log('tcpServer listening on port ' + port + '!');
 
 	   		});
-
-			tcpServer.setMaxListeners = 100;
-		
+				
+			tcpServer.setMaxListeners = 0;
 			tcpServer.listen(3030);		
 
 			
@@ -123,30 +135,34 @@ var TcpSocketAPIHandler = {
 			  });
 
 
-			if (index>=0) {
-				
+			if (index>=0) {				
 				 var socket =OnlineUsersManager.connections[index];				 
 			     OnlineUsersManager.connections[index].write(JSON.stringify(param));	
 			     log.socket.info("[发送" + socket.remoteAddress+":"+ socket.remotePort + "]" + JSON.stringify(param));		 			 
 			 }
 
 		},
-		wirteToUser:function(deviceID,param){
-			var sessionId = OnlineUsersManager.getOnlineUsersByDeviceId(deviceID); 
-			
-
+		wirteToUser:function(deviceID,param,socket_user){
+			var sessionId = OnlineUsersManager.getOnlineUsersByDeviceId(deviceID); 		
 			var index = _.findIndex(OnlineUsersManager.connections, function(socket) {
 			  		if(socket) return socket.id == sessionId; else return false
 			  });	
 
-			
-			  	
-			if (index>=0) {						
-				 OnlineUsersManager.connections[index].write(JSON.stringify(param));
-				 var socket =OnlineUsersManager.connections[index];
-			     log.socket.info("[发送" + socket.remoteAddress+":"+ socket.remotePort + "]" + JSON.stringify(param));				
-			     
+
+			if (socket_user) {
+					socket_user.write(JSON.stringify(param));
+					 log.socket.info("[发送" + socket.remoteAddress+":"+ socket.remotePort + "]" + JSON.stringify(param));							    
+			}else{
+			  if (index>=0) {	
+
+
+
+			     var socket =OnlineUsersManager.connections[index];	
+				 socket.write(JSON.stringify(param));				
+			     log.socket.info("[发送" + socket.remoteAddress+":"+ socket.remotePort + "]" + JSON.stringify(param));							    
 		}
+			}
+
 
 	},
 		wirteToUserWhenDeviceNotOnLine:function(socket,func){
@@ -156,11 +172,9 @@ var TcpSocketAPIHandler = {
                   			data :null,
                   			deviceid:null,
                   			msg:"resCodeSocketDeviceNotOnline"                  			
-                  	  }
-                 
+                  	  }                 
                   socket.write(JSON.stringify(socketdata));
-                  log.socket.info("[发送" + socket.remoteAddress+":"+ socket.remotePort + "]" + JSON.stringify(socketdata));
-                  
+                  log.socket.info("[发送" + socket.remoteAddress+":"+ socket.remotePort + "]" + JSON.stringify(socketdata));                  
                    //socket.end();
 
 		},

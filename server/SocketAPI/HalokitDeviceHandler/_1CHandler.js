@@ -32,7 +32,16 @@ var _1CHandler = function(){
 
  	// }	
 		
-	Observer.send(this, Const.notificationDeviceoffline, param);
+ 		var dn = OnlineUsersManager.devices;
+
+	//	console.log(dn)
+		//设备不在线，删除缓存
+ 		OnlineUsersManager.removeDevice(stock.id)
+ 		
+
+
+
+	 Observer.send(this, Const.notificationDeviceoffline, param);
 
 		
 }

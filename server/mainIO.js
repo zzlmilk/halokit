@@ -1,5 +1,7 @@
 var socket = require('socket.io');
 
+var log = require("./lib/log");
+
 
 
 var express = require('express');
@@ -46,7 +48,7 @@ DatabaseManager.init(function(success){
         process.exit(1);
 
     } else {
-
+      
         OnlineUsersManager.init();
         WebAPI.init(app);       
         BridgeManager.init();
@@ -56,12 +58,14 @@ DatabaseManager.init(function(success){
        //AGPS下载
        //  AGPSHandler.init();
 
+       
+
       TcpSocketAPIHandler.init(Conf.sockPort);
 
 
-
     server.listen(Conf.port, function(){
-             console.log('Server listening on port ' + Conf.port + '!');
+
+          log.api.info('Server listening on port ' + Conf.port + '!');
        });
             
 

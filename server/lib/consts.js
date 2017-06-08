@@ -9,9 +9,8 @@
 
 
 
-   
+    
 
-   
     Const.resCodeSignUpTelNumberDuplicated = 3000005;
     Const.resCodeSignUpNoClientID = 3000006; 
     Const.resCodeSignUpNoDeviceID = 3000007; 
@@ -19,14 +18,25 @@
     Const.resCodeSignUpNoDeviceType = 3000009;
     Const.resCodeSignUpNoAppVersion = 3000010;
     Const.resCodeNullUser = 3000011;
+    
     Const.resCodeUnBindDeviceNodata = 3000012;
-     Const.resCodeBindDeviceNumberDuplicated = 30000013;
+
+    //已经绑定过
+    Const.resCodeBindDeviceNumberDuplicated = 30000013;
+
+
+    
+    Const.resCodeBindDeviceFaild = 30000014;
+
+    
     //暂时不支持多设备绑定
-    Const.resCodeBindDeviceNosuppotMuitBind = 30000014;
-    Const.resCodeBindDeviceHaveBinded = 30000015;
+     Const.resCodeBindDeviceNosuppotMuitBind = 30000014;
+     Const.resCodeBindDeviceHaveBinded = 30000015;
      Const.resCodeNoLongitude = 30000016; 
-    Const.resCodeNoLatitude = 30000017; 
-     Const.resCodeNoRadius = 30000018; 
+     Const.resCodeNoLatitude = 30000017; 
+     Const.resCodeNoRadius = 30000018;
+     
+     Const.resCodeNoRailStatus = 30000019; 
 
 
         
@@ -40,7 +50,6 @@
     Const.resCodeSocketDeviceNotOnline = 4000003;
     
     Const.resCodeSocketDeviceNoFunc = 4000004;
-
 
 
 

@@ -18,7 +18,6 @@ var _0BHandler = function(){
 	
 
  	
-
 	var deviceID = param.deviceid;
 	var deviceModel = DeviceModel.get();
 
@@ -40,11 +39,9 @@ var _0BHandler = function(){
 		
 	// var d = new Date();
 	// var time = d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds()
-
-		
-
-		// //设备放入在线列表
-		// OnlineUsersManager.addDevice(device.toObject(),stock.id);
+	
+	// //设备放入在线列表
+	// OnlineUsersManager.addDevice(device.toObject(),stock.id);
 
 	})
 
@@ -58,6 +55,7 @@ var _0BHandler = function(){
 		发送AGP 数据给硬件
 
 	*/
+
 
 }
 

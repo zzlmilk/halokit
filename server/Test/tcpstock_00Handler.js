@@ -27,17 +27,11 @@ describe('Tcp Stock App 设备注网 设备不在线', function () {
 
 
 						}); 
-
-			      	
-
-
-
+				    
    						client.on('data',function(data){	
 
 						var data  = data.toString();	
-																				
-						 data = JSON.parse(data);
-								 						
+						    data = JSON.parse(data);
 						  data.should.have.property('state');
 		                  data.state.should.equal(4000003);
 		                									
@@ -62,7 +56,7 @@ describe('Tcp Stock Device 设备注网 ', function () {
 		it('can func 00.', function (done) {     	
 
 				var params = {
-				                "deviceid" : "861933030006506" ,
+				                deviceid :global.deviceid,
 				                func:"00"
 			        	};
 			     	
@@ -79,7 +73,7 @@ describe('Tcp Stock Device 设备注网 ', function () {
 						  data.should.have.property('content');
 		                  data.content.should.equal("1");
 		                									
-						done();
+					 	  done();
 
 						}) 			
 		})
@@ -100,6 +94,9 @@ describe('Tcp Stock App 设备注网 设备在线', function () {
 	
 		it('can func 00.', function (done) {     	
 					 global.userTcpSocketLogin(function(data){
+
+
+
 					 	 data.should.have.property('state');
 		                  data.state.should.equal(200);
 					 		done();

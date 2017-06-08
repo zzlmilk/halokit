@@ -22,6 +22,7 @@ var fimepath = "../AGPSFile/";
 
 
 
+
 var AGPSHandler = {
 		init:function(){
 				var data  = Utils.now();

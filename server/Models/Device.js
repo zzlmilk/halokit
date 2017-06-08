@@ -6,6 +6,7 @@ var Const = require("../lib/consts");
 
 
 var BaseModel = require('./BaseModel');
+
 var DeviceModel  = function(){};
 _.extend(DeviceModel.prototype,BaseModel.prototype);
 
@@ -30,7 +31,7 @@ DeviceModel.prototype.init = function(mongoose){
     this.model = mongoose.model(Config.dbCollectionPrefix + "devices", this.schema);
 }
 
-    
+
 
 DeviceModel.get = function(){
     

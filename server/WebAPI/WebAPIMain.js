@@ -24,7 +24,11 @@ var WebAPIMain = {
 				app.use(logger('dev'));
 				app.use(bodyParser.json());
 
-				app.use(log4js.connectLogger(log.api));
+
+			//app.use(log4js.connectLogger(log.api,{level:log4js.levels.INFO,format:':method :url'}));
+		    var LOG_FORMAT = ':request-id - :remote-addr - :method :url - status::status - :res[content-length] Kb - response time :response-time ms';	
+			app.use(log4js.connectLogger(log.api, { level: 'auto', format: LOG_FORMAT}));
+
 				
 				
 

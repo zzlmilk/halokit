@@ -29,8 +29,7 @@ function AuthMiddleware (request, response, next) {
                 
         				    } 
         				  else{
-        				  		console.log("Invalid Access Token",token);
-                    
+        				  		 console.log("Invalid Access Token",token);                    
                					 response.status(Const.httpCodeForbidden);
                					 response.send("");
         				    }

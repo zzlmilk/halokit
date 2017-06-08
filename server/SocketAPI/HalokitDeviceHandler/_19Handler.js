@@ -31,7 +31,7 @@ var _19Handler = function(){
 
  
  	AGPSHandler.getAGPSFile(resolve,function(data){
- 		console.log(resolve)
+ 		
  		var agpsfile = data;
  			param.content = agpsfile;
  			TcpSocketAPIHandler.wirteToDevice(param.deviceID,param)	

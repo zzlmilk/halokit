@@ -26,18 +26,17 @@ var _08Handler = function(){
  	// 	stock.send("")
  	//var params = {"deviceid":"861933030023410","func":"08","content":"42,9"}
 
- 	var prowerString = param.content;
- 	stock.write("")
-
+ 	
  	var device  ={
  		deviceID:param.deviceid,
  		power:param.content,
  		func:param.func
  	}
  	
+
+ 		
  	
  	Observer.send(this, Const.notificationPower, param);
-
 
 
 }

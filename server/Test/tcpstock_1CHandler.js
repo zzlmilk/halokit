@@ -14,7 +14,7 @@ describe('Tcp Stock  设备离线上报', function () {
 	describe(' 硬件设备离线时主动上报离线状态至通讯服务 ', function () {
 	
 		it('can func 1C.', function (done) {     	
-
+				
 			    userTcpSocketLogin(function(data){
 
 			    var paramL = {
@@ -32,8 +32,9 @@ describe('Tcp Stock  设备离线上报', function () {
 
 					global.devicesocket.on("data",function(data){											
 						 data = data.toString();
-						 console.log(data)
+						// console.log(data)
 						 data =  JSON.parse(data);
+						 
 						 
 					if (data.func == "1C") {
 							//global.devicesocket.write(JSON.stringify(param));

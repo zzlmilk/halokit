@@ -9,6 +9,8 @@ var Const = require("../lib/consts");
  var HalokitG3Model = require('../Models/HaloKitG3');
 
 
+var Utils = require('../lib/utils');
+
 
 
 
@@ -39,7 +41,7 @@ HalokitG3Handler.prototype.attach = function(router){
             content: '300816,134652,A,-22.571707,-113.8613968,0.1,0.0,100,1000,50',
             created: 1495602320245,
             __v: 0,
-            g3: 
+            g3data: 
              { myr: '300816',
                sfm: '134652',
                gpstype: 'A',
@@ -57,17 +59,11 @@ HalokitG3Handler.prototype.attach = function(router){
 
 
 
-     router.get('/:clientID/:deviceID',function(request,response){
-            var clientID = request.params.clientID;     
-            var deviceID = request.params.deviceID || request.params.deviceid;    
+     router.get('/',function(request,response){
 
-
-           if(_.isEmpty(clientID)){
-            
-            console.log('err',"no clinetID id");              
-            self.successResponse(response,resCodeSignUpNoClientID);
-            return;
-        	}
+           
+            var deviceID = request.query.deviceID || request.query.deviceid;
+             
 
 	        if(_.isEmpty(deviceID)  ){
 	            
@@ -77,21 +73,24 @@ HalokitG3Handler.prototype.attach = function(router){
 	       	 }
 
 
-	      
+	       var time_now = Utils.now();
+         var begin_time = time_now;
+         var end_time  = time_now -24*60 *60 * 1000;
 
 
-	       	 var halokitG3Model =  HalokitG3Model.get();
-	       	  var  query= halokitG3Model.find(
-               {
-                  
-                  deviceID:deviceID,                
+	       	  var halokitG3Model =  HalokitG3Model.get();
+	       	  
+            var  query= halokitG3Model.find(
+               {                  
+                  deviceID:deviceID, 
+                  created:{$gt: end_time},
+                  created:{$lt:begin_time},
               });
-
-
-
-               query.exec(function(err,data){
+               query.exec(function(err,data){ 
+               if (err) {throw err};              
+               console.log(data)
                self.successResponse(response,Const.responsecodeSucceed,{
-               message: {halokitG3:data[0]}
+               message: {halokitG3:data}
             	});
              });
 

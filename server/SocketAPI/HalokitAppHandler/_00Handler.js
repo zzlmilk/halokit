@@ -66,7 +66,9 @@ _.extend(_00Handler.prototype,SocketHandlerBase.prototype);
                         deviceid:deviceID,
                         data:{user:"socketerror resCodeNullUser"}
                     }
-                   TcpSocketAPIHandler.wirteToUser(deviceID,socketdata)
+
+
+                   TcpSocketAPIHandler.wirteToUser(deviceID,socketdata,socket)
                  
                   return;
                   }
@@ -79,7 +81,7 @@ _.extend(_00Handler.prototype,SocketHandlerBase.prototype);
 		  	     OnlineUsersManager.addUser(data[0].toObject(),socket.id);
 
 
-                        var u = data[0];
+                      var u = data[0];
                       var socketdata = {
                         state:200,
                         msg:"操作成功",

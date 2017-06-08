@@ -3,8 +3,8 @@ var net = require('net') ;
 var appClinet = {
 
 			userstock:null,
-			clientID:"47ec41b2a183782de20478e4fb8d381d",
-			deviceID:"861933030006506",
+			clientID:"test",
+			deviceID:"861933030013924",
 			
 			init:function(){
 				var port  = 3030 ;
@@ -17,8 +17,8 @@ var appClinet = {
 					   var paramL = {
 								  deviceID: this.deviceID, 
 								  clientID: this.clientID,
-								  func: "05",
-								  content:"2"								  
+								  func: "08",
+								  //content:"2"								  
 								 }	
 
 		
@@ -41,8 +41,8 @@ var appClinet = {
 
 								}, oneSecond);
 
-
 					 		 appClient.on('data',function(data){
+					 		 	 	console.log(data)
 					 		 		 var data  = data.toString();  
 					 		 		 console.log(data);
 					 		 });

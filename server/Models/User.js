@@ -34,9 +34,9 @@ UserModel.prototype.init = function(mongoose){
                   latitude:String,
                   longitude:String,
                   radius:Number,
-                  status:{type:Number,default :1}, //1 开启0 关闭
+                  status:{type:Number}, //1 开启 0 关闭
                   created: Number,    
-          },
+        },
         language:String,
         created: Number,        
         uuid : String,
@@ -75,7 +75,6 @@ UserModel.getUserById = function(userId,callBack){
 };
 
 //更新用户语言
-
 UserModel.updateLanguaeByClientId = function(clienId,language,callBack){
     
     var model = DatabaseManager.getModel('User').model;
@@ -101,8 +100,6 @@ UserModel.updateLanguaeByClientId = function(clienId,language,callBack){
         });
             
 };
-
-
 
 
 

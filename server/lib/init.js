@@ -20,6 +20,10 @@
     Config.uploadDir = 'public/uploads/';
     Config.sendAttendanceMessage = true;
 
+
+
+    //个推帐户信息
+    //高德信息
     
     // Exports ----------------------------------------------
     module["exports"] = Config;

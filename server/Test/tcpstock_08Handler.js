@@ -17,7 +17,7 @@ describe('电量推送', function () {
      	 it('硬件 可以发08 指令 .', function (done) {  
      	 	
 
-
+     	 		
 			    userTcpSocketLogin(function(data){
 
 			    var paramL = {
