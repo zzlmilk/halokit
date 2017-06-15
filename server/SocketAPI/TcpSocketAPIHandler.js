@@ -13,7 +13,6 @@ var Const = require("../lib/consts");
 
 var TcpSocketAPIHandler = {
 
-		
 		init:function(port){
 
 		   var self = this;
@@ -54,12 +53,9 @@ var TcpSocketAPIHandler = {
 					 		return;
    					 }
 
-					
 					var func = param.func;
 			        var deviceID = param.deviceid || param.deviceID;
 			        var clientID = param.clientID || param.clientid;
-
-
 
 			        if(!_.isEmpty(clientID)){
 			        	 
@@ -70,51 +66,43 @@ var TcpSocketAPIHandler = {
         					
         					require('./DeviceActionHandler').attach(param,socket);
         				}
+        				
 
-
-				});
-
-					
+				});			
+						
 				// 断开连接事件
 			    socket.on('close', function(conn) {
-			    	//console.log(conn)
+			    	console.log(conn)
 			    	//console.log("socket close");			    	
-			    	OnlineUsersManager.clearSocketBysocketId(socket.id)
-			    	socket.end();			 
-			        
+			    	//OnlineUsersManager.clearSocketBysocketId(socket.id)
+			    	//socket.end();			 			        
 			    });
 
-
-
-
-
+			    	
 			    socket.on('error', function(error) {
-			    	console.log("socket error");
+			    	console.log("socket error",error);
+			    	log.err.info("err" + error);
+
+
 			    	// var  err = new Error(error);			    
 			    	// console.log(err);
-			    	OnlineUsersManager.clearSocketBysocketId(socket.id)
-			    	socket.end()
+			    	//OnlineUsersManager.clearSocketBysocketId(socket.id)
+			    	//socket.end()
 			        
 			    });
 
-
-
-
 				//设置超时时间
-			  var waitTime = 10*100;
+			  var waitTime = 60*15;
 			  socket.setTimeout(1000 * waitTime,function() {
-			  	
-			    console.log('客户端在' + waitTime + 's内未通信，将断开连接...');
+			  console.log('客户端在' + waitTime + 's内未通信，将断开连接...');
 			    	
 			  });
 
 			 //监听到超时事件，断开连接
 			 socket.on('timeout', function() {
 			 		 console.log("socket timeout");
-				     OnlineUsersManager.removeConnection(socket.id);
-				     OnlineUsersManager.removeUser(socket.id);
-				     OnlineUsersManager.removeDevice(socket.id);
-				     socket.end();
+				     //OnlineUsersManager.clearSocketBysocketId(socket.id)
+				     //socket.end();
 				  });
 
 			//	console.log('tcpServer listening on port ' + port + '!');
@@ -151,19 +139,15 @@ var TcpSocketAPIHandler = {
 
 			if (socket_user) {
 					socket_user.write(JSON.stringify(param));
-					 log.socket.info("[发送" + socket.remoteAddress+":"+ socket.remotePort + "]" + JSON.stringify(param));							    
+					 log.socket.info("[发送" + socket_user.remoteAddress+":"+ socket_user.remotePort + "]" + JSON.stringify(param));							    
 			}else{
+
 			  if (index>=0) {	
-
-
-
 			     var socket =OnlineUsersManager.connections[index];	
 				 socket.write(JSON.stringify(param));				
 			     log.socket.info("[发送" + socket.remoteAddress+":"+ socket.remotePort + "]" + JSON.stringify(param));							    
-		}
+		}	
 			}
-
-
 	},
 		wirteToUserWhenDeviceNotOnLine:function(socket,func){
 				var socketdata  = {
@@ -176,7 +160,6 @@ var TcpSocketAPIHandler = {
                   socket.write(JSON.stringify(socketdata));
                   log.socket.info("[发送" + socket.remoteAddress+":"+ socket.remotePort + "]" + JSON.stringify(socketdata));                  
                    //socket.end();
-
 		},
 
 

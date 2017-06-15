@@ -17,7 +17,7 @@ HalokitG3Model.prototype.init = function(mongoose){
 
 	 this.schema = new mongoose.Schema({
         deviceID:{ type: String, index: true },
-        // clientID:{ type: String, index: true },
+        owner:{ type: mongoose.Schema.Types.ObjectId, index: true },
         //content:String,      
         g3data:{
         		myr:String,
@@ -37,7 +37,7 @@ HalokitG3Model.prototype.init = function(mongoose){
         created: Number,   
           	        	        
     });
-
+     
     this.model = mongoose.model(Config.dbCollectionPrefix + "HalokitG3s", this.schema);
 }
 

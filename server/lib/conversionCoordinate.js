@@ -5,7 +5,7 @@
 	var gaodiAPIURL = "http://apilocate.amap.com/position";
 	//http Get
 
-
+	
 	var parms = {
 			key:GAODE_KEY,
 			accesstype:"0",
@@ -18,6 +18,7 @@
 			nearbts:""
 	}
 
+	
 
     //基站坐标通过高得api接口转成gps坐标
     function conversionCoordinate(variable){	

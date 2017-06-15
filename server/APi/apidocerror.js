@@ -29,7 +29,6 @@
 
 
 
-
 /**
  * @apiDefine GlobalWebApi
  *
@@ -41,6 +40,37 @@
  		{"state":4000003,"servercode":"00","data":"","msg":"resCodeSocketDeviceNotOnline"}
  *    
  */
+
+ 
+/**
+     * @api {post}  /user/update  更新用户信息
+     * @apiName 更新用户语言信息
+     * @apiGroup GlobalWebApi
+      * @apiParam {String} clientID 推个id(必填)
+     * @apiParam {String} language   语言（选填）
+     * @apiParam {String} deviceType  ios/anriod（选填）
+     * @apiParam {String} appVersion  手机版本（选填）
+     * @apiDescription 更新用户信息，目前仅支持语言更新。
+
+
+
+     * @apiSuccessExample Success-Response:
+
+{ code: 1,
+  data: 
+   { user: 
+      { _id: '592e7e54f3d534b7bfa80db1',
+        clientID: 'Bz15x',
+        deviceID: 'String',
+        language: 'String',
+        deviceType: 'String',
+        appVersion: 'String',
+        created: 1496219220126,
+        __v: 0,
+        pets: [],
+        devices: [Object] } } }
+
+    */
 
 
 

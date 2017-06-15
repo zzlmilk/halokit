@@ -1,3 +1,4 @@
+
 var mongoose = require('mongoose');
 var _ = require('lodash');
 
@@ -93,6 +94,25 @@ var OnlineUsersManager = {
             return userFound.socketId;            
     },
 
+     getOnlineUserByDeviceId:function(deviceID){   
+
+        var userFound = null;
+        
+        _.forEach(this.users,function(user){
+            
+            if(!user)
+                return;
+
+            
+            if(user.deviceID.toString() == deviceID)         
+            userFound = user;          
+            
+        });
+                
+        if(userFound)
+            return userFound;            
+    },
+
 
      getOnlineDevicesByDeviceId:function(deviceID){       
         var deviceFound = null;
@@ -102,7 +122,7 @@ var OnlineUsersManager = {
             
             if(!device)
                 return;
-            
+        
 
             if(device.deviceID.toString() == deviceID.toString())           
             deviceFound = device;          
@@ -114,11 +134,9 @@ var OnlineUsersManager = {
     },
 
     clearSocketBysocketId:function (socket_id) {
-        this.removeConnection(socket_id);
+        //this.removeConnection(socket_id);
         this.removeUser(socket_id);
-        this.removeDevice(socket_id);
-
-        
+       // this.removeDevice(socket_id);        
     }
 
 

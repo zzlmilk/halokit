@@ -1,0 +1,46 @@
+[2017-06-13 13:42:14.157] [INFO] api - Server listening on port 3031!
+[2017-06-13 13:42:14.543] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /index.html - status:404 - 149 Kb - response time 7 ms
+[2017-06-13 13:42:16.562] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /index.html - status:404 - 149 Kb - response time 1 ms
+[2017-06-13 13:42:17.214] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /index.html - status:404 - 149 Kb - response time 0 ms
+[2017-06-13 13:42:17.676] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 0 ms
+[2017-06-13 13:42:17.921] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 0 ms
+[2017-06-13 13:42:18.727] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 0 ms
+[2017-06-13 13:42:19.314] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 0 ms
+[2017-06-13 13:42:19.822] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 0 ms
+[2017-06-13 13:42:20.264] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 1 ms
+[2017-06-13 13:42:20.487] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 0 ms
+[2017-06-13 13:42:20.634] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 0 ms
+[2017-06-13 13:42:20.770] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 1 ms
+[2017-06-13 13:42:20.984] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 1 ms
+[2017-06-13 13:42:45.306] [INFO] api - Server listening on port 3031!
+[2017-06-13 13:43:08.821] [INFO] api - Server listening on port 3031!
+[2017-06-13 13:43:20.769] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 12 ms
+[2017-06-13 13:43:23.933] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 3 ms
+[2017-06-13 13:43:27.052] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /client - status:404 - 145 Kb - response time 1 ms
+[2017-06-13 13:43:29.059] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /client - status:404 - 145 Kb - response time 1 ms
+[2017-06-13 13:43:29.805] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 0 ms
+[2017-06-13 13:43:29.840] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 1 ms
+[2017-06-13 13:43:55.615] [INFO] api - Server listening on port 3031!
+[2017-06-13 13:44:54.178] [INFO] api - Server listening on port 3031!
+[2017-06-13 13:45:21.596] [INFO] api - Server listening on port 3031!
+[2017-06-13 13:45:22.017] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 12 ms
+[2017-06-13 13:45:26.268] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 4 ms
+[2017-06-13 13:45:28.290] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 1 ms
+[2017-06-13 13:45:44.475] [INFO] api - Server listening on port 3031!
+[2017-06-13 13:45:49.822] [INFO] api - Server listening on port 3031!
+[2017-06-13 13:52:48.098] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /js/Vue - status:404 - 145 Kb - response time 13 ms
+[2017-06-13 13:54:52.245] [INFO] api - Server listening on port 3031!
+[2017-06-13 14:21:24.462] [INFO] api - Server listening on port 3031!
+[2017-06-13 14:22:47.883] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /learvue/tree - status:404 - 151 Kb - response time 16 ms
+[2017-06-13 14:22:55.821] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /learnvue/tree/js/Vue.js - status:404 - 162 Kb - response time 4 ms
+[2017-06-13 14:22:55.826] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /learnvue/tree/tree.js - status:404 - 160 Kb - response time 1 ms
+[2017-06-13 14:25:11.266] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /learnvue/tree/js/Vue.js - status:404 - 162 Kb - response time 0 ms
+[2017-06-13 14:25:11.273] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /learnvue/tree/tree.js - status:404 - 160 Kb - response time 1 ms
+[2017-06-13 14:25:28.946] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /learnvue/tree/tree.js - status:404 - 160 Kb - response time 1 ms
+[2017-06-13 15:00:48.682] [INFO] api - Server listening on port 3031!
+[2017-06-13 15:00:59.784] [INFO] api - Server listening on port 3031!
+[2017-06-13 16:32:30.418] [INFO] api - Server listening on port 3031!
+[2017-06-13 16:32:31.790] [INFO] api - 推送个推[object Object]
+[2017-06-13 16:32:57.915] [INFO] api - Server listening on port 3031!
+[2017-06-13 16:32:59.188] [INFO] api - 推送个推[object Object]
+[2017-06-13 16:33:40.668] [INFO] api - Server listening on port 3031!

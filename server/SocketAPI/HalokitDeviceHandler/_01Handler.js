@@ -8,8 +8,6 @@ var _ = require('lodash');
  var HalokitG3Model = require('../../Models/HaloKitG3');
 
 
-var _ = require('lodash');
-
 var Observer = require("node-observer");
 
 var Const = require("../../lib/consts");
@@ -19,6 +17,8 @@ var SocketHandlerBase = require('../SocketHandlerBase');
 var GDPosition = require('../../Logics/GDPosition');
 
 var async = require('async');
+var UserModel = require('../../Models/User');
+
 
 
 var _01Handler = function(){
@@ -38,6 +38,7 @@ _.extend(_01Handler.prototype,SocketHandlerBase.prototype);
  	 var self = this;
      var deviceID = param.deviceID ||param.deviceid;
 	 	
+
         if(_.isEmpty(deviceID)  ){
             
             console.log('err',"no deviceID id");
@@ -45,6 +46,9 @@ _.extend(_01Handler.prototype,SocketHandlerBase.prototype);
             socket.write('socketerror', {code:Const.resCodeSocketLoginNodeviceID});               
             return;
         }
+
+
+   
 
 	        
 
@@ -68,6 +72,7 @@ _.extend(_01Handler.prototype,SocketHandlerBase.prototype);
 		haloKitG3  = new haloKitG3Model({
 
 			deviceID:deviceID,
+			//owner : userID,
 			//content:param.content,			
 			g3data:{
 				myr:data[0],
@@ -116,6 +121,7 @@ _.extend(_01Handler.prototype,SocketHandlerBase.prototype);
 				 		haloKitG3  = new haloKitG3Model({
 
 							deviceID:deviceID,
+							
 							//content:param.content,			
 							g3data:{
 								myr:data[0],
@@ -145,25 +151,7 @@ _.extend(_01Handler.prototype,SocketHandlerBase.prototype);
  						console.log("基站解析不成功信息",result)
  					}
  			})
-
-		
-
-
-
-
  	}
-
-
-
-
-		
-
- 		
- 			
-	
-
-
-
 
 }
 

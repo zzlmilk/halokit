@@ -13,6 +13,8 @@ var UserModel = require('../Models/User');
 
 var Utils = require('./utils');
 
+var PushNotificationManager = require('./pushnotification/PushNotificationManager');
+
 
 
 var BridgeManager = {
@@ -116,11 +118,12 @@ var BridgeManager = {
            *  {"state":200,"msg":"响应设置","servercode":"10","deviceid":"861933030013924","data":{"device":{"currentMode":"05"}}}
          * @apiUse DeviceNotOnline
      */
-     console.log("notificationDeviceResponse",obj)
+     //console.log("notificationDeviceResponse",obj)
 
         if (!obj) {
             return;
         };
+
         obj.deviceID = obj.deviceid ||obj.deviceID;
 
         var device = {
@@ -136,13 +139,9 @@ var BridgeManager = {
                         data:{device:device}
         }
 
-
-
-
-
+        
          TcpSocketAPIHandler.wirteToUser(obj.deviceID,stockData)
         
-
  });
 
 
@@ -213,12 +212,20 @@ var BridgeManager = {
         if (!obj) {
             return;
         };
-
+        
         obj.deviceID = obj.deviceid ||obj.deviceID;
+        var userFound = OnlineUsersManager.getOnlineUserByDeviceId(obj.deviceID);
 
+        if (!userFound  ) {
+                console.log("notificationRAILResponse error user notFound ");
+        }
+
+        
+        
         userModel = UserModel.get();
         userModel.findOne({
-              deviceID:obj.deviceID
+              deviceID:obj.deviceID,
+              //clientID:userFound.clientID
         },function(err,user){
                 if(err){
                     console.log(err);
@@ -226,20 +233,24 @@ var BridgeManager = {
                 }
 
         var rail = user.rail;
-
-
-       
         
+
          if( _.isEmpty(rail)){            
-            console.log('err',"no  rail");                      
+            console.log('warning',"no rail");                      
             return;
-        }
+        }   
 
          var dis =    Utils.CaculateDistance(rail.latitude,rail.longitude,obj.g3data.latitude,obj.g3data.longitude);
 
          // dis = 80;            
         //超出电子围栏｀
-         if(dis > rail.radius && radius.status ==1){
+
+       
+
+         if(dis > rail.radius && rail.status == "1" ){
+
+            console.log("电子围栏警告")
+
             var stockData1 = {
                         state:200,
                         msg:"电子围栏警告",
@@ -248,12 +259,14 @@ var BridgeManager = {
                         data:{g3:obj,
                             distance:dis
                     }
-            }
-            
-
-
+            }                    
             TcpSocketAPIHandler.wirteToUser(obj.deviceID,stockData1);
 
+            // obj.distance =  dis;
+            // //推送警告
+             PushNotificationManager.onNewMessage(obj);
+
+             
          }
          else{
                  var stockData = {

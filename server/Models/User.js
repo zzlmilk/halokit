@@ -14,10 +14,13 @@ var DatabaseManager = require('../lib/DatabaseManager');
 UserModel.prototype.init = function(mongoose){
 
 	 this.schema = new mongoose.Schema({
-        clientID:{type:String, index:true}, //个推ID       
+        clientID:{type:String, index:true}, //个推ID     
+        username: String, 
+        displayName: String, 
+        password: String,
         cellPhone:Number,    
-        password:String, 
-        deviceID:String,  
+        type:{type:Number, default : 1},  //1国际版 //国内版本2
+        deviceID:String,   
         devices:[
                 {
                     deviceID:String,
@@ -37,15 +40,24 @@ UserModel.prototype.init = function(mongoose){
                   status:{type:Number}, //1 开启 0 关闭
                   created: Number,    
         },
-        language:String,
-        created: Number,        
-        uuid : String,
-        deviceType : String,
-        appVersion : String,
-        ip:String,        
-        apptype:Number  // 1国内 2国际版本
-    });
+        avatar : {
+            file : String,
+            thumb : String
+        },
+        token : {
+            token: String,
+            generated: Number
+        },
 
+        language:String,    //用户语言
+        created: Number,       //创建时间
+        pushToken : String, //推送手机id
+        deviceType : String, //iOS or 安卓
+        appVersion : String, //app 软件版本
+        ip:String,        
+        apptype:Number,      // 1国内 2国际版本
+        additionalInfo: {},
+    });
 
 
     this.model = mongoose.model(Config.dbCollectionPrefix + "users", this.schema);
@@ -60,46 +72,28 @@ UserModel.get = function(){
 
 
 // class methods
-UserModel.getUserById = function(userId,callBack){
-    
-    var model = DatabaseManager.getModel('User').model;
 
-    model.findOne({ _id: userId },function (err, result) {
+UserModel.findUserByDeviceID =function(deviceID,callBack){
 
-        if (err) throw err;
-                             
-        if(callBack)
-            callBack(result);    
-    });
-    
-};
+    var userModel = DatabaseManager.getModel('User').model;
 
-//更新用户语言
-UserModel.updateLanguaeByClientId = function(clienId,language,callBack){
-    
-    var model = DatabaseManager.getModel('User').model;
-
-    model.findOne({ clienId: clienId },function (err, user) {
-
-        if (err) throw err;
-
-            if(_.isNull(user)){
-            
-                 self.successResponse(response,Const.resCodeNullUser);
-                
-                return;
+   // console.log("findUserByDeviceID",deviceID)
+    userModel.findOne({
+            deviceID :deviceID
+    },function(err,user){
+            if (err || !user) {
+                console.log('err or user is null', err);
+                throw err;
+                callBack(err,null);
             }
+            else{
+               
+                callBack(null,user);
+               
+            }
+    })    
 
-        user.update({
-             language: language
-        },{},function(err,result){
-               if(callBack)
-                    callBack(result);    
-                });
-
-        });
-            
-};
+}
 
 
 

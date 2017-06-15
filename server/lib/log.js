@@ -13,7 +13,8 @@ var resolve = path.resolve('../Log');
      * - dev: :method :url :status :response-time ms - :res[content-length]
      * - short: :remote-addr :remote-user :method :url HTTP/:http-version :status :res[content-length] - :response-time ms
      * - tiny: :method :url :status :res[content-length] - :response-time ms
-     */
+ */
+ 
 
 log4js.configure({
 		appenders:[
@@ -51,7 +52,7 @@ log4js.configure({
 
 
 var logger ={
-
+    
          socket:log4js.getLogger('socketLog'),
          api:log4js.getLogger('api'),
          err:log4js.getLogger('error'),

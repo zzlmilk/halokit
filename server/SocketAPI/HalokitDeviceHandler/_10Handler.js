@@ -24,7 +24,7 @@ var _10Handler = function(){
   		var content = param.content
 	
 
-
+  	
  	Observer.send(this, Const.notificationDeviceResponse, param);
 
 

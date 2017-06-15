@@ -3,8 +3,6 @@ var router = express.Router();
 
 var bodyParser = require("body-parser");
 var _ = require('lodash');
-var logger = require('morgan');
-
 
 
 var init = require('../lib/init.js');
@@ -14,35 +12,30 @@ var log4js = require('log4js');
 
 
 
-
+	
 var WebAPIMain = {
 			init:function(app){
-
 				var self = this;
-
-				app.use('/',express.static(__dirname + '/../../doc/API'));
-				app.use(logger('dev'));
+				//app.use('/',express.static(__dirname + '/../../doc/API'));
+				app.use('/',express.static(__dirname + '/../../client'));
 				app.use(bodyParser.json());
-
+				
+				
 
 			//app.use(log4js.connectLogger(log.api,{level:log4js.levels.INFO,format:':method :url'}));
-		    var LOG_FORMAT = ':request-id - :remote-addr - :method :url - status::status - :res[content-length] Kb - response time :response-time ms';	
-			app.use(log4js.connectLogger(log.api, { level: 'auto', format: LOG_FORMAT}));
+		    	var LOG_FORMAT = ':request-id - :remote-addr - :method :url - status::status - :res[content-length] Kb - response time :response-time ms';	
+				app.use(log4js.connectLogger(log.api, { level: 'INFO', format: LOG_FORMAT}));
 
-				
-				
-
-
-
-
+								
 				//测试
 				router.use("/test", require('./TestHandler'));
-
-
+				
 				//用户
-				router.use("/user/signup", require('./SignUp'));
-				router.use("/user/signin", require('./SignIn'));
+				// router.use("/user/signup", require('./SignUp'));
+				// router.use("/user/signin", require('./SignIn'));
 
+
+				router.use("/user/update", require('./UserUpdate'));
 				
 				//device
 				router.use("/device/bindDevice", require('./BindDevice'));
@@ -65,7 +58,6 @@ var WebAPIMain = {
 
 
 				//api版本控制
-
 				app.use(init.urlPrefix + "/v1", router);
 				//app.use(init.urlPrefix + "/v1", router);
 

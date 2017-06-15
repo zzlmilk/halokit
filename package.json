@@ -9,7 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "apn": "^2.1.4",
+    "babyparse": "^0.4.6",
     "body-parser": "^1.17.1",
+    "bootstrap-sass": "^3.3.7",
     "crypto": "0.0.3",
     "express": "^4.15.2",
     "gulp": "^3.9.1",
@@ -35,8 +38,12 @@
     "zlib": "^1.0.5"
   },
   "devDependencies": {
+    "browserify": "^14.4.0",
     "gulp": "^3.9.1",
     "gulp-apidoc": "^0.2.6",
-    "mochawesome": "^2.2.0"
+    "handlebars": "^4.0.10",
+    "hbsfy": "^2.7.0",
+    "mochawesome": "^2.2.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }

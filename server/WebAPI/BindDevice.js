@@ -26,8 +26,13 @@ _.extend(BindDeviceHandler.prototype,RequestHandlerBase.prototype);
      * @apiName 绑定设备
      * @apiGroup GlobalWebApi
      * @apiDescription 绑定设备
-      * @apiParam {String} clientid 推个id  
- 	 * @apiParam {String} deviceid  设备id.
+     * @apiParam {String} clientID 推个id  
+ 	 * @apiParam {String} deviceID  设备id.
+ 	 * @apiParam {String} language   语言.
+ 	 * @apiParam {String} deviceType  ios/anriod.
+ 	 * @apiParam {String} appVersion  手机版本.
+ 	 * @apiParam {String} pushToken  手机唯一识别号
+	 	
      * @apiSuccessExample Success-Response:
 {code: 1,
   data: 
@@ -52,13 +57,13 @@ BindDeviceHandler.prototype.attach = function(router){
 		var self = this;
 		router.post('/',function(request,response){	
 
-
 			 self.validate(request.body,function(err,user){
 					var clientID = request.body.clientID;
 			        var deviceID = request.body.deviceID;
 			        var language = request.body.language;
 			        var deviceType = request.body.deviceType;
 			        var appVersion = request.body.appVersion;
+			        var pushToken = request.body.pushToken;
 
 			 		if(!err && !user){
 				 		
@@ -68,7 +73,6 @@ BindDeviceHandler.prototype.attach = function(router){
 			 					status:1,
 			 					created: Utils.now() 
 			 			}
-
 
 			 			var devices = []
 			 			devices.push(device)
@@ -80,6 +84,7 @@ BindDeviceHandler.prototype.attach = function(router){
 		                    language: language,
 		                    deviceType: deviceType,
 		                    appVersion: appVersion,
+		                    pushToken:pushToken,
 		                    rail:null,
 		                    created: Utils.now()          
 		                });	
@@ -98,7 +103,7 @@ BindDeviceHandler.prototype.attach = function(router){
 			 		}	
 			 		else {
 			 			if (user) {
-			 					user.devices[0].status = 1;
+			 					// user.devices[0].status = 1;
 							    user.deviceID = deviceID;
 							    user.save(function(err,userModelResult){
 							    		self.successResponse(response,Const.responsecodeSucceed,{
@@ -106,12 +111,9 @@ BindDeviceHandler.prototype.attach = function(router){
 				               		});
 							    })
 			 			}
-			 			else{
+			 			else{	
 			 				 self.successResponse(response,err);  
 			 			}
-
-
-               			
 
          			}
 
@@ -133,14 +135,14 @@ BindDeviceHandler.prototype.validate = function(requestBody,callBack){
 	// value validation should be done in client side
     // check duplications
     
-
+   
     //self.errorResponse(response,Const.httpCodeServerError);
   		if(_.isEmpty(requestBody.clientID))            	
             callBack(Const.resCodeSignUpNoClientID)
 
         if(_.isEmpty(requestBody.deviceID))            	
             callBack(Const.resCodeSignUpNoDeviceID)
-
+        
         if(_.isEmpty(requestBody.deviceType))            	
             callBack(Const.resCodeSignUpNoDeviceType)
 
@@ -149,36 +151,45 @@ BindDeviceHandler.prototype.validate = function(requestBody,callBack){
 
         if(_.isEmpty(requestBody.appVersion))            	
             callBack(Const.resCodeSignUpNoAppVersion)
-      
+
+         if(_.isEmpty(requestBody.pushToken))            	
+            callBack(Const.resCodeSignUpNopushToken)
 
 
+     
     var userModel = UserModel.get();
 
 
 
     userModel.findOne({ clientID: requestBody.clientID },function (err, user) {    	    
+			
 
-   
-		
+		//有用户  		
     	if(!_.isNull(user)){    
 			var device = user.devices[0];
 
-				if (!_.isNull(device)) {
-						if (device.deviceID == requestBody.deviceID && device.status ==1)
-						{
-							callBack(Const.resCodeBindDeviceNumberDuplicated,user)
-						}
-						else {
-							 callBack(Const.resCodeBindDeviceNosuppotMuitBind,user)
-						}
-				};
+				if (user.deviceID == requestBody.deviceID) {
+						callBack(Const.resCodeBindDeviceNumberDuplicated,null)
+				}
+				else{
+					callBack(null,user)
+				}
 
-				
+ 				
 
-    			
+
+
+				// if (!_.isNull(device)) {
+				// 		if (device.deviceID == requestBody.deviceID && device.status ==1)
+				// 		{
+				// 			callBack(Const.resCodeBindDeviceNumberDuplicated,null)
+				// 		}
+				// 		else {
+				// 			 callBack(Const.resCodeBindDeviceNosuppotMuitBind,user)
+				// 		}
+				// };
     	}
     	else{
-
     		callBack(null,null)
     	}
 

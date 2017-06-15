@@ -1,0 +1,70 @@
+[2017-06-12 10:21:30.461] [INFO] api - Server listening on port 3031!
+[2017-06-12 10:22:00.892] [INFO] api - Server listening on port 3031!
+[2017-06-12 10:22:10.297] [INFO] api - Server listening on port 3031!
+[2017-06-12 10:22:30.477] [INFO] api - Server listening on port 3031!
+[2017-06-12 10:22:52.557] [INFO] api - Server listening on port 3031!
+[2017-06-12 10:23:06.687] [INFO] api - Server listening on port 3031!
+[2017-06-12 10:23:07.680] [INFO] api - Server listening on port 3031!
+[2017-06-12 10:23:25.699] [INFO] api - Server listening on port 3031!
+[2017-06-12 10:23:33.655] [INFO] api - Server listening on port 3031!
+[2017-06-12 10:24:22.854] [INFO] api - Server listening on port 3031!
+[2017-06-12 10:25:52.266] [INFO] api - Server listening on port 3031!
+[2017-06-12 10:25:57.302] [INFO] api - Server listening on port 3031!
+[2017-06-12 10:26:03.423] [INFO] api - Server listening on port 3031!
+[2017-06-12 10:26:21.241] [INFO] api - Server listening on port 3031!
+[2017-06-12 10:26:26.948] [INFO] api - Server listening on port 3031!
+[2017-06-12 10:27:57.878] [INFO] api - Server listening on port 3031!
+[2017-06-12 10:29:09.007] [INFO] api - Server listening on port 3031!
+[2017-06-12 10:29:40.780] [INFO] api - Server listening on port 3031!
+[2017-06-12 10:30:42.290] [INFO] api - Server listening on port 3031!
+[2017-06-12 10:35:59.114] [INFO] api - Server listening on port 3031!
+[2017-06-12 17:15:29.177] [INFO] api - Server listening on port 3031!
+[2017-06-12 17:15:46.479] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /apple-touch-icon-precomposed.png - status:404 - 171 Kb - response time 7 ms
+[2017-06-12 17:15:46.484] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /apple-touch-icon.png - status:404 - 159 Kb - response time 1 ms
+[2017-06-12 17:17:20.770] [INFO] api - Server listening on port 3031!
+[2017-06-12 17:18:27.518] [INFO] api - Server listening on port 3031!
+[2017-06-12 17:21:09.192] [INFO] api - Server listening on port 3031!
+[2017-06-12 17:21:28.776] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /index - status:404 - 144 Kb - response time 6 ms
+[2017-06-12 17:21:28.801] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /favicon.ico - status:404 - 150 Kb - response time 1 ms
+[2017-06-12 17:21:31.513] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /index - status:404 - 144 Kb - response time 1 ms
+[2017-06-12 17:21:41.511] [INFO] api - Server listening on port 3031!
+[2017-06-12 17:21:42.095] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 7 ms
+[2017-06-12 17:21:43.150] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 3 ms
+[2017-06-12 17:21:44.542] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 1 ms
+[2017-06-12 17:21:44.667] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 1 ms
+[2017-06-12 17:22:17.588] [INFO] api - Server listening on port 3031!
+[2017-06-12 17:22:37.143] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 9 ms
+[2017-06-12 17:22:39.544] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 1 ms
+[2017-06-12 17:22:41.835] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /index - status:404 - 144 Kb - response time 2 ms
+[2017-06-12 17:22:44.062] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /index.html - status:404 - 149 Kb - response time 0 ms
+[2017-06-12 17:25:23.040] [INFO] api - Server listening on port 3031!
+[2017-06-12 17:25:24.398] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 7 ms
+[2017-06-12 17:25:27.215] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 2 ms
+[2017-06-12 17:25:27.733] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 1 ms
+[2017-06-12 17:26:15.569] [INFO] api - Server listening on port 3031!
+[2017-06-12 17:26:18.212] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 6 ms
+[2017-06-12 17:26:20.466] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 2 ms
+[2017-06-12 17:27:12.296] [INFO] api - Server listening on port 3031!
+[2017-06-12 17:27:19.399] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 7 ms
+[2017-06-12 17:27:20.237] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 5 ms
+[2017-06-12 17:27:28.821] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 1 ms
+[2017-06-12 17:27:30.201] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 1 ms
+[2017-06-12 17:27:42.578] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /index.html - status:404 - 149 Kb - response time 1 ms
+[2017-06-12 17:27:43.617] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /index.html - status:404 - 149 Kb - response time 1 ms
+[2017-06-12 17:29:42.574] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /index.html - status:404 - 149 Kb - response time 1 ms
+[2017-06-12 17:29:43.019] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /index.html - status:404 - 149 Kb - response time 1 ms
+[2017-06-12 17:29:43.600] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 0 ms
+[2017-06-12 17:29:51.154] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /hello.html - status:404 - 149 Kb - response time 0 ms
+[2017-06-12 17:29:58.297] [INFO] api - Server listening on port 3031!
+[2017-06-12 17:29:58.371] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /hello.html - status:404 - 149 Kb - response time 6 ms
+[2017-06-12 17:30:42.339] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /hello.html - status:404 - 149 Kb - response time 2 ms
+[2017-06-12 17:31:48.483] [INFO] api - Server listening on port 3031!
+[2017-06-12 17:32:27.875] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /static/hello.html - status:404 - 156 Kb - response time 5 ms
+[2017-06-12 17:33:41.145] [INFO] api - Server listening on port 3031!
+[2017-06-12 17:33:41.757] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /static/hello.html - status:404 - 156 Kb - response time 7 ms
+[2017-06-12 17:33:42.932] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /static/hello.html - status:404 - 156 Kb - response time 3 ms
+[2017-06-12 17:33:45.013] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /static/hello.html - status:404 - 156 Kb - response time 1 ms
+[2017-06-12 17:35:01.171] [INFO] api - Server listening on port 3031!
+[2017-06-12 17:35:01.268] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET / - status:404 - 139 Kb - response time 7 ms
+[2017-06-12 17:35:10.669] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /html - status:404 - 143 Kb - response time 1 ms
+[2017-06-12 17:35:16.518] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /html/hello.html - status:404 - 154 Kb - response time 1 ms

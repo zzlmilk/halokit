@@ -8,8 +8,9 @@ var Observer = require("node-observer");
 var TcpSocketAPIHandler = require('../TcpSocketAPIHandler');
 
 
-var _1CHandler = function(){
-    
+var _1CHandler = function(){	
+
+	     
 }
 
 //离线上报

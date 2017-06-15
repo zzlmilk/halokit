@@ -11,17 +11,26 @@ var helper = require("../Test/helper");
 
 //var username = "test" + global.getRandomStr() ;
 describe('WEB API bind device', function () {
-		var params ={
-		clientID:"test1", //个推ID
-        deviceID:"861933030013924", //设备ID
-        language:"String",
-        uuid : "String",
-        deviceType : "String",
-        appVersion : "String",
+		// var params ={
+		// clientID:global.getRandomStr(), //个推ID
+  //       deviceID:global.getRandomStr(), //设备ID
+  //       language:"String",
+  //       deviceType : "String",
+  //       appVersion : "String",
+  //       pushToken:"pushToken"
+        
+		// }
 
-		}
+
+params= { appVersion: '1.0.2',
+  clientID: global.getRandomStr(),
+  deviceID: '861933030028500',
+  deviceType: 'android',
+  language: 'CN' ,
+  pushToken:"string"
+}
 		
-		describe('/device/bindDevice 绑定设备', function () {
+	describe('/device/bindDevice 绑定设备可以帮', function () {
 				 it('Can bind', function (done) {
 			            request(app)
 		                .post('/halokit/v1/device/bindDevice')
@@ -43,7 +52,73 @@ describe('WEB API bind device', function () {
 
 		});
 
+
+
+
+	describe('/device/bindDevice 用户已经存在', function () {
+
+
+				param2= { appVersion: '1.0.2',
+				  clientID:"seSXa",
+				  deviceID: '861933030028500',
+				  deviceType: 'android',
+				  language: 'CN' ,
+				  pushToken:"string"
+				}
+
+				 it(' 返回30000013', function (done) {
+			            request(app)
+		                .post('/halokit/v1/device/bindDevice')
+		                .send(param2)
+		                .end(function (err, res) {
+		    			if (err) {
+		    				throw err;
+		    			}    		
+		    			 console.log(res.body)	
+		                 res.body.should.have.property('code');
+		                 res.body.code.should.equal(30000013);		                 		             
+		                 done();
+
+		            });
+		            
+		          });   
+
+		});
+
+		describe('/device/bindDevice 用户已经设备id不同，应该更新成功', function () {
+
+
+				param3= { appVersion: '1.0.2',
+				  clientID:"test",
+				  deviceID: global.getRandomStr(),
+				  deviceType: 'android',
+				  language: 'CN' ,
+				  pushToken:"string"
+				}
+
+				 it('用户已经设备id不同，应该更新成功', function (done) {
+			            request(app)
+		                .post('/halokit/v1/device/bindDevice')
+		                .send(param3)
+		                .end(function (err, res) {
+		    			if (err) {
+		    				throw err;
+		    			}    		
+		    			 console.log(res.body)	
+		                 res.body.should.have.property('code');
+		                 res.body.code.should.equal(1);		                 		             
+		                 done();
+
+		            });
+		            
+		          });   
+
+		});
+
+
 });
+
+
 
 //注册
 

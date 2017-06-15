@@ -19,7 +19,7 @@ describe('位置上报', function () {
 			    	
 			    	if(data.state != 200){
 
-			    	     console.log(data)
+			    	     // console.log(data)
 			    			return;
 			    	}
 			    	    
@@ -46,11 +46,11 @@ describe('位置上报', function () {
 						
 						 if (data.servercode == "0D" ||data.servercode =="01") {
 						 		
+						 		console.log(data)
 							  data.should.have.property('state');						  
 			                  data.state.should.equal(200);
 			                  // global.devicesocket.end()
 			                  // global.usersocket.end()
-
 							  done();
 
 						 };
@@ -85,7 +85,7 @@ describe('位置上报', function () {
  				var paramL = {
 							  deviceid: global.deviceid, 
 							  func: "01", 
-							  content : "300816,134652,A,-22.571707,-113.8613968,0.1,0.0,100,1000,50"
+							  content : "300816,134652,A,30.6618568,104.1089193,0.1,0.0,100,1000,50"
 							}
 
 				var oneSecond = 1000 * 1;
@@ -99,7 +99,7 @@ describe('位置上报', function () {
 						 data = JSON.parse(data);
 
 						 if (data.servercode == "0D" ||data.servercode =="01") {					
-						 	console.log(data)
+						 	
 							  data.should.have.property('state');						  
 			                  data.state.should.equal(200);
 							  done();

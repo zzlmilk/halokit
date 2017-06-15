@@ -55,19 +55,18 @@ _.extend(_00Handler.prototype,SocketHandlerBase.prototype);
               });
                query.exec(function(err,data){
 
-                //
+                 //
 
                   if (data.length  ==0) { 
                    console.log("socketerror resCodeNullUser")  
                      var socketdata = {
-                        state:200,
-                        msg:"操作成功",
+                        state:3000011,
+                        msg:"操作成功 ",
                         servercode:func,
                         deviceid:deviceID,
-                        data:{user:"socketerror resCodeNullUser"}
+                        data:{user:null}
                     }
-
-
+              
                    TcpSocketAPIHandler.wirteToUser(deviceID,socketdata,socket)
                  
                   return;
@@ -79,7 +78,6 @@ _.extend(_00Handler.prototype,SocketHandlerBase.prototype);
 
 	              //用户放入在线列表
 		  	     OnlineUsersManager.addUser(data[0].toObject(),socket.id);
-
 
                       var u = data[0];
                       var socketdata = {

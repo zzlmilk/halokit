@@ -16,7 +16,6 @@ var Utils = require("../lib/utils");
 
 
 
-
 var RailHandler = function(){}
 
 _.extend(RailHandler.prototype,RequestHandlerBase.prototype);
@@ -87,8 +86,9 @@ RailHandler.prototype.attach = function(router){
      router.post('/update',function(request,response){
 
         var log = require("../lib/log");
-        log.api.info("update 参数"+request.body);
 
+        //log.api.info("update 参数"+request.body);
+        console.log(request.body)
         self.createAndUptare(request.body,response,function(err,result){
                 if (!err) {
                     self.successResponse(response,Const.responsecodeSucceed,{rail:result.rail});    
@@ -162,7 +162,7 @@ RailHandler.prototype.createAndUptare =function(params,response,callback){
         
         var clientID = params.clientID || params.clientid;
         var deviceID = params.deviceID || params.deviceid; 
-        
+
         var latitude = params.latitude;
         var longitude = params.longitude;
         var status = params.status;
@@ -211,7 +211,6 @@ RailHandler.prototype.createAndUptare =function(params,response,callback){
     var userModel = UserModel.get();       
         userModel.findOne({ 
             clientID: clientID,
-                      
         },function (err, user) {
             if(!user){
                 self.successResponse(response,Const.resCodeUnBindDeviceNodata); 

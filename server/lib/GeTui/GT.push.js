@@ -156,10 +156,13 @@ GeTui.prototype.httpPostJson = function (host, postData, needGzip, callback) {
     var _this = this;
     postData.version = GtConfig.getSDKVersion();
     httpManager.post(host, postData, needGzip, function (err, response) {
-//        console.log("httpPostJson get:" + response.result);
+     //  console.log("httpPostJson get:" + response.result);
         if (response && response.result == "sign_error") {
-//            console.log("holy shit, get sign_error from server");
+         //   console.log("holy shit, get sign_error from server");
+
+
             _this.connect(function (err, result) {
+               
                 if (result == true) {
                     //console.log("connect success.");
 //                    console.log("so retry", host, postData);

@@ -1,11 +1,13 @@
 var net = require('net') ;
 
-var appClinet = {
 
+
+
+
+var appClinet = {
 			userstock:null,
-			clientID:"test",
-			deviceID:"861933030013924",
-			
+			 
+
 			init:function(){
 				var port  = 3030 ;
 
@@ -20,18 +22,14 @@ var appClinet = {
 								  func: "08",
 								  //content:"2"								  
 								 }	
-
-		
+					 		
 					 var appClient = net.connect({port: port,host:"api.halokit.cn"}, function() {
 
 					 		userstock  = appClient;
 					 		
-					 		//appClient.write(JSON.stringify(params));  
-
-
-							var oneSecond = 1000 * 1;
-							
-			
+					 		appClient.write(JSON.stringify(params));  
+					 		
+							var oneSecond = 1000 * 1;					
 								setTimeout(function() {								  
 								  appClient.write(JSON.stringify(paramL));  
 						
@@ -42,9 +40,11 @@ var appClinet = {
 								}, oneSecond);
 
 					 		 appClient.on('data',function(data){
-					 		 	 	console.log(data)
+					 		 	 	 
+					 		 		 
 					 		 		 var data  = data.toString();  
 					 		 		 console.log(data);
+
 					 		 });
 					 });
 

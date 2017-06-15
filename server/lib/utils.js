@@ -78,7 +78,7 @@ var _ = require('lodash');
         //北京时间的时区为东8区，起点时间实际为：'1970/01/01 08:00:00
         var time = now();
          console.log(time)
-          var testDate1 = new Date(time);
+        var testDate1 = new Date(time);
         console.log(testDate1)
         time = time - (16 * 60 * 60 * 1000 )
         console.log(time)
@@ -194,6 +194,11 @@ var _ = require('lodash');
     } 
 
 
+
+
+
+
+
      function CaculateDistance(lat1,lng1,lat2,lng2){
 
      
@@ -218,10 +223,17 @@ var _ = require('lodash');
         s = s*EARTH_RADIUS; 
         s = Math.round(s*10000)/10000.0; 
 
+      
+
         return s;
 
      }
 
+
+//latitude31.060110 longitude 121.395944
+//latitude":"31.174965","longitude":"121.3875427
+
+///CaculateDistance("31.060110","121.395944","31.174965","121.3875427")
 
     
 

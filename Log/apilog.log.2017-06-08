@@ -1,0 +1,61 @@
+[2017-06-08 10:46:59.089] [INFO] api - Server listening on port 3031!
+[2017-06-08 10:47:24.797] [INFO] api - Server listening on port 3031!
+[2017-06-08 12:03:17.892] [INFO] api - Server listening on port 3031!
+[2017-06-08 15:27:16.791] [INFO] api - Server listening on port 3031!
+[2017-06-08 15:27:16.879] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 16 Kb - response time 22 ms
+[2017-06-08 15:27:41.453] [INFO] api - Server listening on port 3031!
+[2017-06-08 15:27:41.532] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 16 Kb - response time 10 ms
+[2017-06-08 15:28:01.987] [INFO] api - Server listening on port 3031!
+[2017-06-08 15:28:02.028] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 16 Kb - response time 6 ms
+[2017-06-08 15:28:12.716] [INFO] api - Server listening on port 3031!
+[2017-06-08 15:28:12.757] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 16 Kb - response time 5 ms
+[2017-06-08 15:29:29.057] [INFO] api - Server listening on port 3031!
+[2017-06-08 15:29:29.134] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 16 Kb - response time 7 ms
+[2017-06-08 15:29:39.063] [INFO] api - Server listening on port 3031!
+[2017-06-08 15:29:39.114] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 16 Kb - response time 8 ms
+[2017-06-08 15:29:49.664] [INFO] api - Server listening on port 3031!
+[2017-06-08 15:29:49.721] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 16 Kb - response time 22 ms
+[2017-06-08 15:30:38.396] [INFO] api - Server listening on port 3031!
+[2017-06-08 15:30:38.506] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 16 Kb - response time 24 ms
+[2017-06-08 15:30:51.583] [INFO] api - Server listening on port 3031!
+[2017-06-08 15:30:51.703] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 16 Kb - response time 45 ms
+[2017-06-08 15:31:02.985] [INFO] api - Server listening on port 3031!
+[2017-06-08 15:31:03.084] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 16 Kb - response time 24 ms
+[2017-06-08 15:31:22.416] [INFO] api - Server listening on port 3031!
+[2017-06-08 15:31:22.554] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 348 Kb - response time 68 ms
+[2017-06-08 17:24:55.194] [ERROR] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/user/update - status:404 - 162 Kb - response time 5 ms
+[2017-06-08 17:25:16.852] [INFO] api - Server listening on port 3031!
+[2017-06-08 17:25:16.892] [ERROR] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/user/update - status:404 - 162 Kb - response time 5 ms
+[2017-06-08 17:25:48.006] [INFO] api - Server listening on port 3031!
+[2017-06-08 17:25:48.043] [ERROR] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/user/update - status:404 - 162 Kb - response time 4 ms
+[2017-06-08 17:26:17.922] [INFO] api - Server listening on port 3031!
+[2017-06-08 17:26:18.013] [ERROR] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/user/update - status:404 - 162 Kb - response time 5 ms
+[2017-06-08 17:26:50.805] [INFO] api - Server listening on port 3031!
+[2017-06-08 17:26:50.917] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/user/update - status:200 - 16 Kb - response time 37 ms
+[2017-06-08 17:27:30.506] [INFO] api - Server listening on port 3031!
+[2017-06-08 17:27:30.629] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/user/update - status:200 - 16 Kb - response time 40 ms
+[2017-06-08 17:28:09.248] [INFO] api - Server listening on port 3031!
+[2017-06-08 17:28:44.866] [INFO] api - Server listening on port 3031!
+[2017-06-08 17:29:14.553] [INFO] api - Server listening on port 3031!
+[2017-06-08 17:29:14.694] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/user/update - status:200 - 449 Kb - response time 55 ms
+[2017-06-08 17:29:59.659] [ERROR] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/user/update - status:404 - 162 Kb - response time 5 ms
+[2017-06-08 17:30:20.019] [INFO] api - Server listening on port 3031!
+[2017-06-08 17:30:20.104] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/user/update - status:200 - 37 Kb - response time 52 ms
+[2017-06-08 17:31:12.083] [INFO] api - Server listening on port 3031!
+[2017-06-08 17:31:12.218] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/user/update - status:200 - 453 Kb - response time 62 ms
+[2017-06-08 17:32:19.501] [INFO] api - Server listening on port 3031!
+[2017-06-08 17:32:19.624] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/user/update - status:200 - 471 Kb - response time 50 ms
+[2017-06-08 17:32:30.926] [INFO] api - Server listening on port 3031!
+[2017-06-08 17:32:31.019] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/user/update - status:200 - 471 Kb - response time 55 ms
+[2017-06-08 17:32:39.762] [INFO] api - Server listening on port 3031!
+[2017-06-08 17:32:39.845] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/user/update - status:200 - 471 Kb - response time 49 ms
+[2017-06-08 17:34:20.796] [INFO] api - Server listening on port 3031!
+[2017-06-08 17:34:20.938] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/user/update - status:200 - 55 Kb - response time 67 ms
+[2017-06-08 17:34:37.728] [INFO] api - Server listening on port 3031!
+[2017-06-08 17:34:37.847] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/user/update - status:200 - 475 Kb - response time 46 ms
+[2017-06-08 17:38:21.482] [INFO] api - Server listening on port 3031!
+[2017-06-08 17:38:21.625] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/user/update - status:200 - 475 Kb - response time 62 ms
+[2017-06-08 17:38:30.237] [INFO] api - Server listening on port 3031!
+[2017-06-08 17:38:30.328] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/user/update - status:200 - 471 Kb - response time 55 ms
+[2017-06-08 17:38:44.067] [INFO] api - Server listening on port 3031!
+[2017-06-08 17:38:44.121] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/user/update - status:200 - 16 Kb - response time 21 ms

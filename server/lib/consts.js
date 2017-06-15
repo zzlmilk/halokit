@@ -16,16 +16,17 @@
     Const.resCodeSignUpNoDeviceID = 3000007; 
     Const.resCodeSignUpNoLanguage = 3000008;
     Const.resCodeSignUpNoDeviceType = 3000009;
+    Const.resCodeSignUpNopushToken  = 3000020
     Const.resCodeSignUpNoAppVersion = 3000010;
+    
     Const.resCodeNullUser = 3000011;
     
     Const.resCodeUnBindDeviceNodata = 3000012;
-
+    
     //已经绑定过
     Const.resCodeBindDeviceNumberDuplicated = 30000013;
 
 
-    
     Const.resCodeBindDeviceFaild = 30000014;
 
     

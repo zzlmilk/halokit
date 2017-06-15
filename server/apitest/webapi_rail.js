@@ -18,9 +18,11 @@ describe('WEB API bind device', function () {
         deviceID:"861933030013924", //设备ID
         longitude:"0.1",
         latitude:"0.1",
-        radius:"50"
-		}
+        radius:"50",
+        status:"1",
 
+		}
+		
 		describe('/user/rail 创建电子围栏', function () {
 				 it('Can create', function (done) {
 			            request(app)
@@ -40,27 +42,30 @@ describe('WEB API bind device', function () {
 		          });   
 		});
 
-		// describe('/user/rail 更新电子围栏', function () {
-		// 		 it('Can update', function (done) {
-		// 	            request(app)
-		//                 .post('/halokit/v1/user/rail/update')
-		//                 .send(params)
-		//                 .end(function (err, res) {
-		//     			if (err) {
-		//     				throw err;
-		//     			}    		
+		describe('/user/rail 更新电子围栏', function () {
+				var paramsUpdate = params;
+				paramsUpdate.latitude = "38.6618568";
+				paramsUpdate.longitude = "110.1089193";
+				 it('Can update', function (done) {
+			            request(app)
+		                .post('/halokit/v1/user/rail/update')
+		                .send(params)
+		                .end(function (err, res) {
+		    			if (err) {
+		    				throw err;
+		    			}    		
 		    			
-		//                  res.body.should.have.property('code');
-		//                  res.body.code.should.equal(1);
-		//                  res.body.should.have.property('data');
+		                 res.body.should.have.property('code');
+		                 res.body.code.should.equal(1);
+		                 res.body.should.have.property('data');
 		              
-		//                  done();
+		                 done();
 
-		//             });
+		            });
 		            
-		//           });   
+		          });   
 
-		// });
+		});
 
 		describe('/user/rail 查询电子围栏', function () {
 

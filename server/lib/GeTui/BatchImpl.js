@@ -18,6 +18,7 @@ BatchImpl.prototype.getBatchId = function () {
     return this.batchId;
 };
 
+
 BatchImpl.prototype.add = function (message, target) {
     if (this.seqId >= 5000) {
         throw new Error("Can not add over 5000 message once! Please call submit() first.");

@@ -1,6 +1,7 @@
 var socket = require('socket.io');
 
 var log = require("./lib/log");
+var schedule = require('./Schedule/Cronjob');
 
 
 
@@ -8,6 +9,8 @@ var express = require('express');
 var http = require('http');
 var net  =require('net');
 var Conf = require('./lib/init.js');
+
+
 
 
 
@@ -27,7 +30,7 @@ var server = http.createServer(app);
 var port = Conf.port;
 var io = socket.listen(server);
 
-      
+
 
 var WebAPI = require('./WebAPI/WebAPIMain');
 var SocketAPI = require('./SocketAPI/SocketAPIHandler');
@@ -38,6 +41,13 @@ var BridgeManager = require('./lib/BridgeManager');
 var TcpSocketAPIHandler = require('./SocketAPI/TcpSocketAPIHandler');
 
 var AGPSHandler = require("./lib/AGPS");
+var path = require('path');
+var resolve = path.resolve('AGPSFile');
+
+
+
+
+
 
 
 DatabaseManager.init(function(success){
@@ -48,7 +58,7 @@ DatabaseManager.init(function(success){
         process.exit(1);
 
     } else {
-      
+        
         OnlineUsersManager.init();
         WebAPI.init(app);       
         BridgeManager.init();
@@ -56,13 +66,11 @@ DatabaseManager.init(function(success){
 
 
        //AGPS下载
-       //  AGPSHandler.init();
+      schedule.init(resolve);
+     
+    TcpSocketAPIHandler.init(Conf.sockPort);
 
-       
-
-      TcpSocketAPIHandler.init(Conf.sockPort);
-
-
+    
     server.listen(Conf.port, function(){
 
           log.api.info('Server listening on port ' + Conf.port + '!');

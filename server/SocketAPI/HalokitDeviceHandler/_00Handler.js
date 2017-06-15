@@ -13,16 +13,19 @@ var _00Handler = function(){
  _00Handler.prototype.attach = function(param,socket,io) {
  	// body...
 	
-	var deviceID = param.deviceid;
+	var deviceID = param.deviceid || param.deviceID;
 	var deviceModel = DeviceModel.get();
 	
-	deviceModel.findOne({deviceID:param.deviceid},function(err,device){
+	
+
+	deviceModel.findOne({deviceID:deviceID},function(err,device){
 		
-		
+	
 		if (!device) {			
 				console.log("no device");				
-				param.content = "0";
-				socket.write("{socketerror:no device}");  
+				param.content = "1";
+
+				TcpSocketAPIHandler.wirteToDevice(deviceID,param)				  
 				//TcpSocketAPIHandler.wirteToDevice(deviceID,param)	      
 
 				return;
@@ -33,13 +36,17 @@ var _00Handler = function(){
 		OnlineUsersManager.addDevice(device.toObject(),socket.id);
 
 	
-		param.content = "1";	
+		param.content = "1";
+
 		TcpSocketAPIHandler.wirteToDevice(deviceID,param)	
 		
 
 	
 
 	})
+
+
+ 
 
 
 

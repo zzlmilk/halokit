@@ -30,10 +30,11 @@ var _0BHandler = function(){
 
 		if (!device) {			
 			console.log("no device");
-			stock.write(param)
+			TcpSocketAPIHandler.wirteToDevice(deviceID,param)
 
 		}
 		else{
+			
 			TcpSocketAPIHandler.wirteToDevice(deviceID,param)
 		}
 		
