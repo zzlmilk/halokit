@@ -77,8 +77,7 @@ HalokitG3Handler.prototype.attach = function(router){
          var begin_time = time_now;
          var end_time  = time_now -24*60 *60 * 1000;
 
-         console.log('begin_time',begin_time)
-         console.log('end_time',end_time)
+
 
 
 	       	  var halokitG3Model =  HalokitG3Model.get();
@@ -91,7 +90,6 @@ HalokitG3Handler.prototype.attach = function(router){
               });
                query.exec(function(err,data){ 
                if (err) {throw err};              
-               console.log(data)
                self.successResponse(response,Const.responsecodeSucceed,{
                message: {halokitG3:data}
             	});

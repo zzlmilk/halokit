@@ -11,6 +11,9 @@ var Const = require("../lib/consts");
 var Utils = require("../lib/utils");
 var log = require("../lib/log");
 
+var DeviceModel = require('../Models/Device');
+
+
 
 
 
@@ -32,6 +35,7 @@ _.extend(BindDeviceHandler.prototype,RequestHandlerBase.prototype);
  	 * @apiParam {String} deviceType  ios/anriod.
  	 * @apiParam {String} appVersion  手机版本.
  	 * @apiParam {String} pushToken  手机唯一识别号
+ 	 * @apiParam {String} version   当前应用版本
 	 	
      * @apiSuccessExample Success-Response:
 {code: 1,
@@ -64,6 +68,7 @@ BindDeviceHandler.prototype.attach = function(router){
 			        var deviceType = request.body.deviceType;
 			        var appVersion = request.body.appVersion;
 			        var pushToken = request.body.pushToken;
+			        var version = request.body.version;
 
 			 		if(!err && !user){
 				 		
@@ -85,6 +90,7 @@ BindDeviceHandler.prototype.attach = function(router){
 		                    deviceType: deviceType,
 		                    appVersion: appVersion,
 		                    pushToken:pushToken,
+		                    version:version,
 		                    rail:null,
 		                    created: Utils.now()          
 		                });	
@@ -155,45 +161,80 @@ BindDeviceHandler.prototype.validate = function(requestBody,callBack){
          if(_.isEmpty(requestBody.pushToken))            	
             callBack(Const.resCodeSignUpNopushToken)
 
+        if(_.isEmpty(requestBody.version))            	
+            callBack(Const.resCodeSignUpNoVersion)
+
+
+
+
+
+        async.waterfall([
+        	function (done){
+        		
+        			//验证设备号设备号
+        			var deviceModel = DeviceModel.get();
+        			deviceModel.findOne({"deviceID":requestBody.deviceID},function (err,device){
+        					
+        					
+        					if (device) 
+        						 done(null,device);
+        					else
+        						 done(Const.resCodeDataBaseNoDevice,null);
+
+        			})
+
+        			
+
+
+        	},
+        	function (result,done){
+        		//console.log("result",result);
+        		 var userModel = UserModel.get();
+
+					    userModel.findOne({ clientID: requestBody.clientID },function (err, user) {    	    
+								
+							//有用户  		
+					    	if(!_.isNull(user)){    
+								var device = user.devices[0];
+
+									if (user.deviceID == requestBody.deviceID) {
+											callBack(Const.resCodeBindDeviceNumberDuplicated,null)
+									}
+									else{
+										callBack(null,user)
+									}					 			
+									// if (!_.isNull(device)) {
+									// 		if (device.deviceID == requestBody.deviceID && device.status ==1)
+									// 		{
+									// 			callBack(Const.resCodeBindDeviceNumberDuplicated,null)
+									// 		}
+									// 		else {
+									// 			 callBack(Const.resCodeBindDeviceNosuppotMuitBind,user)
+									// 		}
+									// };
+					    	}
+					    	else{
+					    		callBack(null,null)
+					    	}
+
+					    });
+        		
+        	}
+
+        ],
+        function (err, result) {
+        		 console.log("err",err);
+                 callBack(err)
+                            
+            });
+
+
+       
 
      
-    var userModel = UserModel.get();
+   
 
 
-
-    userModel.findOne({ clientID: requestBody.clientID },function (err, user) {    	    
-			
-
-		//有用户  		
-    	if(!_.isNull(user)){    
-			var device = user.devices[0];
-
-				if (user.deviceID == requestBody.deviceID) {
-						callBack(Const.resCodeBindDeviceNumberDuplicated,null)
-				}
-				else{
-					callBack(null,user)
-				}
-
- 				
-
-
-
-				// if (!_.isNull(device)) {
-				// 		if (device.deviceID == requestBody.deviceID && device.status ==1)
-				// 		{
-				// 			callBack(Const.resCodeBindDeviceNumberDuplicated,null)
-				// 		}
-				// 		else {
-				// 			 callBack(Const.resCodeBindDeviceNosuppotMuitBind,user)
-				// 		}
-				// };
-    	}
-    	else{
-    		callBack(null,null)
-    	}
-
-    });
 
 
 

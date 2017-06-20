@@ -46,6 +46,13 @@ log4js.configure({
             encoding:"UTF-8",
             category:'error'
         },
+          {
+            type:'dateFile' ,
+            filename:resolve+"/data.log" ,            
+            maxLogSize:"2048 ",
+            encoding:"UTF-8",
+            category:'data'
+        },
         ]
 })
 
@@ -56,6 +63,7 @@ var logger ={
          socket:log4js.getLogger('socketLog'),
          api:log4js.getLogger('api'),
          err:log4js.getLogger('error'),
+         data:log4js.getLogger('data'),
 }
 
 

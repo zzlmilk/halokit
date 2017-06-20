@@ -39,9 +39,8 @@ DeviceSignUpHandler.prototype.attach = function(router){
             return;
         }
 
-
-
-
+        
+        
         var deviceModel = DeviceModel.get();
         deviceModel.findOne({deviceID:deviceID},function(err,device){
         	if(!_.isNull(device)){    			
@@ -58,10 +57,7 @@ DeviceSignUpHandler.prototype.attach = function(router){
 		       		})
         });
 
-
      })
-
-			
 
   })
 

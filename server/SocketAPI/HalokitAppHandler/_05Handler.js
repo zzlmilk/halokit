@@ -93,7 +93,7 @@ _.extend(_05Handler.prototype,SocketHandlerBase.prototype);
 
                    }
                    else{            
-                   	  TcpSocketAPIHandler.wirteToUserWhenDeviceNotOnLine(socket,func);                                      		
+                   	  TcpSocketAPIHandler.wirteToUserWhenDeviceNotOnLine(deviceID,socket,func);                                      		
                    }                       
                   		
                  }

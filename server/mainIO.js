@@ -13,7 +13,7 @@ var Conf = require('./lib/init.js');
 
 
 
-
+ 
 Conf.host = "127.0.0.1";
 Conf.port = 3031;  //api端口
 Conf.sockPort = 3030;   
@@ -48,9 +48,7 @@ var resolve = path.resolve('AGPSFile');
 
 
 
-
-
-DatabaseManager.init(function(success){
+DatabaseManager.init(Conf,function(success){
 
     if(!success){
 
@@ -76,7 +74,6 @@ DatabaseManager.init(function(success){
           log.api.info('Server listening on port ' + Conf.port + '!');
        });
             
-
 
 
     }

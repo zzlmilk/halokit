@@ -23,9 +23,6 @@ var AppActionHandler = function(){
 
 AppActionHandler.prototype.attach = function(param,socket){
 
-
-
-
         var func = param.func;
         var deviceID = param.deviceid || param.deviceID;
         var clientID = param.clientID || param.clientid;
@@ -211,6 +208,7 @@ AppActionHandler.prototype.attach = function(param,socket){
 
 
         SocketAPIHandler.emitToDevice(deviceID,param);
+
 
    });
 

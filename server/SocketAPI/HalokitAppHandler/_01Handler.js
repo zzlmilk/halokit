@@ -55,7 +55,7 @@ _.extend(_01Handler.prototype,SocketHandlerBase.prototype);
                      TcpSocketAPIHandler.wirteToDevice(deviceID,socketdata)   
                    }
                    else{            
-                   	 TcpSocketAPIHandler.wirteToUserWhenDeviceNotOnLine(socket,func);                     
+                   	 TcpSocketAPIHandler.wirteToUserWhenDeviceNotOnLine(deviceID,socket,func);                     
                    }                       
                   		
                  }

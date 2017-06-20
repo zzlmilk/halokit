@@ -2,6 +2,8 @@ var net = require('net') ;
 
 
 
+
+
 var param01w = {
 		  deviceid: "861933030013924", 
 		  func: "01", 
@@ -9,15 +11,18 @@ var param01w = {
 		}
 
 
+var url_location = "127.0.0.1";
+var prot = 3030;
+
+var deviceID = "861933030013924";
 
 var devClinet = {
 			
-			deviceID:"861933030013924",
-				
+			 			
 			init:function(){
 				var port  = 3030 ;
 					   var params = {					            
-					              deviceID : this.deviceID,
+					              deviceID : deviceID,
 					              func:"00"
 					            };		
 					   // var paramL = {
@@ -28,7 +33,7 @@ var devClinet = {
 								//  }	
 
 				//api.halokit.cn
-					 var client = net.connect({port: port,host:"api.halokit.cn"}, function() {
+					 var client = net.connect({port: port,host:url_location}, function() {
 
 					 		// userstock  = appClient;
 					 		
@@ -63,17 +68,10 @@ var devClinet = {
 
 
 
-var _ = require('lodash');
 
-
- if (_.isEmpty(rails)) {
- 	console.log(rails)
- };
+ devClinet.init()
 
 return;
-
-
-
 
 var oneSecond = 1000 * 20;
 var i = 0;

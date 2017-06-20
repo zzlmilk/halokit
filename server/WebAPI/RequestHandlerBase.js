@@ -46,6 +46,7 @@ RequestHandlerBase.prototype.successResponse = function(response,code,data){
             code : Const.responsecodeSucceed,
             data : data
         });
+        
             log.api.debug({"code":code,"data":data})    
     }
 

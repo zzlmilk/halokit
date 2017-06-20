@@ -9,8 +9,6 @@
 
 
 
-    
-
     Const.resCodeSignUpTelNumberDuplicated = 3000005;
     Const.resCodeSignUpNoClientID = 3000006; 
     Const.resCodeSignUpNoDeviceID = 3000007; 
@@ -18,8 +16,11 @@
     Const.resCodeSignUpNoDeviceType = 3000009;
     Const.resCodeSignUpNopushToken  = 3000020
     Const.resCodeSignUpNoAppVersion = 3000010;
+    Const.resCodeSignUpNoVersion = 3000022;
     
     Const.resCodeNullUser = 3000011;
+
+    Const.resCodeDataBaseNoDevice = 3000021;
     
     Const.resCodeUnBindDeviceNodata = 3000012;
     
@@ -40,11 +41,10 @@
      Const.resCodeNoRailStatus = 30000019; 
 
 
-        
-
     Const.resCodeSignUpDeviceIdDuplicated = 3000003;
 
     Const.resCodeSocketAppConnectDeviceSuccee = 1;
+
     Const.resCodeSocketLoginNoclinetID = 4000001;
     Const.resCodeSocketLoginNodeviceID = 4000002;    
 

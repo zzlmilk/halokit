@@ -32,7 +32,7 @@ var AGPSHandler = {
 						}).pipe(fs.createWriteStream(path+'/'+AGPS_FILENAME,{encoding: 'hex'}))
 
 		},
-		
+
 		init2:function(){
 				var req = http.get(AGPS_URL,function(res){
 						console.log('STATUS: ' + res.statusCode);
@@ -76,6 +76,8 @@ var AGPSHandler = {
 
 
 }
+
+
 
 
 //AGPSHandler.init();

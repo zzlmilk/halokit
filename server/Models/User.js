@@ -54,8 +54,10 @@ UserModel.prototype.init = function(mongoose){
         pushToken : String, //推送手机id
         deviceType : String, //iOS or 安卓
         appVersion : String, //app 软件版本
+
         ip:String,        
         apptype:Number,      // 1国内 2国际版本
+        version:String,
         additionalInfo: {},
     });
 

@@ -12,6 +12,8 @@ var _00Handler = function(){
 
  _00Handler.prototype.attach = function(param,socket,io) {
  	// body...
+
+ 	
 	
 	var deviceID = param.deviceid || param.deviceID;
 	var deviceModel = DeviceModel.get();

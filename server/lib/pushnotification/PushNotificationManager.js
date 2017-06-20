@@ -7,8 +7,8 @@ var Const = require('../consts.js');
 var Conf = require('../init.js');
 
 
-var GeTui = require('../GeTui/GT.push');
-var Target = require('../GeTui/getui/Target');
+var GeTui = require('../../GeTui/GT.push');
+var Target = require('../../GeTui/getui/Target');
 
 var GT =  require('./GT')
 

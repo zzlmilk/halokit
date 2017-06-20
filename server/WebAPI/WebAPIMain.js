@@ -54,8 +54,6 @@ var WebAPIMain = {
 				router.use("/device/signup", require('./DeviceSignUp'));
 
 
-			   
-
 
 				//api版本控制
 				app.use(init.urlPrefix + "/v1", router);

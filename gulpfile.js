@@ -42,6 +42,7 @@ gulp.task('browserify-build', function() {
 });
 
 
+
 gulp.task('test', function (done) {
     return gulp.src('server/Test/*.js', { read: false })
     .pipe(mocha({ reporter: 'spec' }))
@@ -54,7 +55,6 @@ gulp.task('test', function (done) {
 // 		}
     		
 // ))
-   
 });
 
 

@@ -23,8 +23,7 @@ var DeviceActionHandler = function(){
 
 DeviceActionHandler.prototype.attach = function(param,socket){
 
-    
-         
+ 
         var func = param.func;
         var deviceID = param.deviceid || param.deviceID;
         var clientID = param.clientID || param.clientid;
@@ -97,7 +96,7 @@ DeviceActionHandler.prototype.attach = function(param,socket){
 
             default:
              
-             console.log('err',"unknow func ",func);
+            console.log('err',"unknow func ",func);
             socket.write("socketerror:unknow func");   
 
         }

@@ -27,7 +27,8 @@ params= { appVersion: '1.0.2',
   deviceID: '861933030028500',
   deviceType: 'android',
   language: 'CN' ,
-  pushToken:"string"
+  pushToken:"string",
+  version :"2.0.0"
 }
 		
 	describe('/device/bindDevice 绑定设备可以帮', function () {
@@ -63,7 +64,8 @@ params= { appVersion: '1.0.2',
 				  deviceID: '861933030028500',
 				  deviceType: 'android',
 				  language: 'CN' ,
-				  pushToken:"string"
+				  pushToken:"string",
+				  version :"2.0.0"
 				}
 
 				 it(' 返回30000013', function (done) {
@@ -88,12 +90,43 @@ params= { appVersion: '1.0.2',
 		describe('/device/bindDevice 用户已经设备id不同，应该更新成功', function () {
 
 
+				param7= { appVersion: '1.0.2',
+				  clientID:"test",
+				  deviceID: "861933030002059",
+				  deviceType: 'android',
+				  language: 'CN' ,
+				  pushToken:"string",
+				  version :"2.0.0"				}
+				  
+
+				 it('用户已经设备id不同，应该更新成功', function (done) {
+			            request(app)
+		                .post('/halokit/v1/device/bindDevice')
+		                .send(param7)
+		                .end(function (err, res) {
+		    			if (err) {
+		    				throw err;
+		    			}    		
+		    			 console.log(res.body)	
+		                 res.body.should.have.property('code');
+		                 res.body.code.should.equal(1);		                 		             
+		                 done();
+
+		            });
+		            
+		          });   
+
+		});
+
+
+		describe('/device/bindDevice 设备是非法 code ＝3000021', function () {
 				param3= { appVersion: '1.0.2',
 				  clientID:"test",
 				  deviceID: global.getRandomStr(),
 				  deviceType: 'android',
 				  language: 'CN' ,
-				  pushToken:"string"
+				  pushToken:"string",
+				  version :"2.0.0"
 				}
 
 				 it('用户已经设备id不同，应该更新成功', function (done) {
@@ -106,7 +139,7 @@ params= { appVersion: '1.0.2',
 		    			}    		
 		    			 console.log(res.body)	
 		                 res.body.should.have.property('code');
-		                 res.body.code.should.equal(1);		                 		             
+		                 res.body.code.should.equal(3000021);		                 		             
 		                 done();
 
 		            });

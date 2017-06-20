@@ -9,16 +9,20 @@ var DatabaseManager = {
 
     isDatabaseReady : false,
     loadedModels : {},
-    init: function(callBack){
-            
+    init: function(config,callBack){
+
+
+        
 		var self = this;
         
         // Connection to chat database
-        console.log("Connecting mongoDB " + Conf.databaseUrl);
+        console.log("Connecting mongoDB " + config.databaseUrl);
+
+
 
         try{
             mongoose.Promise = global.Promise;  
-	        mongoose.connect(Conf.databaseUrl, function(err){
+	        mongoose.connect(config.databaseUrl, function(err){
 
 	          if (err) {
 
@@ -36,6 +40,7 @@ var DatabaseManager = {
 	        });
 
         } catch(ex){
+
 
 	        console.log("Failed to connect MongoDB!");
 

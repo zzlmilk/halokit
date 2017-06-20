@@ -218,19 +218,21 @@ var BridgeManager = {
 
         if (!userFound  ) {
                 console.log("notificationRAILResponse error user notFound ");
+                return;
         }
 
-        
+
         
         userModel = UserModel.get();
         userModel.findOne({
               deviceID:obj.deviceID,
-              //clientID:userFound.clientID
+              clientID:userFound.clientID
         },function(err,user){
                 if(err){
                     console.log(err);
                     return;
                 }
+
 
         var rail = user.rail;
         
@@ -245,7 +247,7 @@ var BridgeManager = {
          // dis = 80;            
         //超出电子围栏｀
 
-       
+
 
          if(dis > rail.radius && rail.status == "1" ){
 
@@ -259,7 +261,8 @@ var BridgeManager = {
                         data:{g3:obj,
                             distance:dis
                     }
-            }                    
+            }
+
             TcpSocketAPIHandler.wirteToUser(obj.deviceID,stockData1);
 
             // obj.distance =  dis;

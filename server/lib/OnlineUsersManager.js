@@ -28,21 +28,34 @@ var OnlineUsersManager = {
                                    
     },
     removeConnection:function(socketId){
-     var index = _.findIndex(this.connections, function(connection) {
-      if(connection) return connection.socketId == socketId; else return false});
-        delete this.connections[index];
+        //socket 取出
+        var index = _.findIndex(OnlineUsersManager.connections,function(connection){
+            if (connection) {
+
+                 return  connection.id == socket.id
+            }
+            else{
+                return false;
+            }
+                
+        })
+
+        if (index>=0) {
+            delete OnlineUsersManager.connections[index];
+        }
+
+
+
     },
 
-    addUser:function(user,socketId){
-
+    addUser:function(user,socketId){        
         user.socketId = socketId;  
-        this.users.push(user);      
-                   
+        this.users.push(user);                         
     },
-    removeUser:function(socketId){
-
+    removeUser:function(socket){
      var index = _.findIndex(this.users, function(user) {
-      if(user) return user.socketId == socketId; else return false});
+
+      if(user) return user.socketId == socket.id; else return false});
         delete this.users[index];
     },
     addDevice:function(device,socketId){
@@ -77,21 +90,19 @@ var OnlineUsersManager = {
 
     getOnlineUsersByDeviceId:function(deviceID){   
 
-        var userFound = null;
+        var userFound = [];
         
         _.forEach(this.users,function(user){
             
             if(!user)
                 return;
-
             
             if(user.deviceID.toString() == deviceID)         
-            userFound = user;          
+            userFound.push(user);          
             
         });
-                
-        if(userFound)
-            return userFound.socketId;            
+                        
+            return userFound;            
     },
 
      getOnlineUserByDeviceId:function(deviceID){   
@@ -117,7 +128,6 @@ var OnlineUsersManager = {
      getOnlineDevicesByDeviceId:function(deviceID){       
         var deviceFound = null;
         
-
         _.forEach(this.devices,function(device){
             
             if(!device)

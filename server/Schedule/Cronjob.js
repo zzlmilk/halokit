@@ -10,7 +10,7 @@ var Schedule = {
 
 		schedule.scheduleJob('* 59 * * * *', function(){
  // console.log('The answer to life, the universe, and everything!');
- 			console.log("下载AGPS");
+ 			
 			  AGPSHandler.init(path);
 		});
 	}

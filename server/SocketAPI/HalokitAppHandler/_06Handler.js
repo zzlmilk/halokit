@@ -51,6 +51,7 @@ _.extend(_06Handler.prototype,SocketHandlerBase.prototype);
   var content = param.content;
 
 
+    
 	 var userModel = UserModel.get();
 
 
@@ -72,7 +73,7 @@ _.extend(_06Handler.prototype,SocketHandlerBase.prototype);
                      TcpSocketAPIHandler.wirteToDevice(deviceID,socketdata) 
                    }
                    else{            
-                     TcpSocketAPIHandler.wirteToUserWhenDeviceNotOnLine(socket,func);                                          
+                     TcpSocketAPIHandler.wirteToUserWhenDeviceNotOnLine(deviceID,socket,func);                                          
                    }                       
                   		
                  }

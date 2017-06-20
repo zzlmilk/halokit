@@ -3,13 +3,13 @@ var Const = require('../consts.js');
 var Conf = require('../init.js');
 
 
-var GeTui = require('../GeTui/GT.push');
-var Target = require('../GeTui/getui/Target');
-var TransmissionTemplate = require('../GeTui/getui/template/TransmissionTemplate');
-var APNPayload = require('../GeTui/payload/APNPayload');
-var SimpleAlertMsg = require('../GeTui/payload/SimpleAlertMsg');
-var SingleMessage = require('../GeTui/getui/message/SingleMessage');
-var NotificationTemplate = require('../GeTui/getui/template/NotificationTemplate');
+var GeTui = require('../../GeTui/GT.push');
+var Target = require('../../GeTui/getui/Target');
+var TransmissionTemplate = require('../../GeTui/getui/template/TransmissionTemplate');
+var APNPayload = require('../../GeTui/payload/APNPayload');
+var SimpleAlertMsg = require('../../GeTui/payload/SimpleAlertMsg');
+var SingleMessage = require('../../GeTui/getui/message/SingleMessage');
+var NotificationTemplate = require('../../GeTui/getui/template/NotificationTemplate');
 
 var log = require("../log");
 
@@ -27,9 +27,6 @@ var GT = {
  				      msg = "您的爱宠已经在电子围栏范围外";
 			  }else
 			  		msg = message
-
-
-
 
 
 			 self.gt.connect(function () {			 	

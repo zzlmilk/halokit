@@ -1,0 +1,553 @@
+[2017-06-15 14:42:29.249] [DEBUG] api - { code: 3000020 }
+[2017-06-15 14:42:29.284] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 16 Kb - response time 35 ms
+[2017-06-15 14:43:01.013] [DEBUG] api - { code: 3000020 }
+[2017-06-15 14:43:01.035] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 16 Kb - response time 21 ms
+[2017-06-15 14:43:04.870] [DEBUG] api - { code: 3000020 }
+[2017-06-15 14:43:04.894] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 16 Kb - response time 26 ms
+[2017-06-15 14:43:09.977] [DEBUG] api - { code: 3000020 }
+[2017-06-15 14:43:10.000] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 16 Kb - response time 24 ms
+[2017-06-15 14:43:29.717] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { __v: 0,
+        clientID: '32Fxr',
+        deviceID: '861933030028500',
+        language: 'CN',
+        deviceType: 'android',
+        appVersion: '1.0.2',
+        pushToken: 'string',
+        created: 1497509009686,
+        _id: 59422c9196ed6425edf1ebc1,
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:43:29.725] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 370 Kb - response time 81 ms
+[2017-06-15 14:43:37.226] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { __v: 0,
+        clientID: 'T6GP0',
+        deviceID: '861933030028500',
+        language: 'CN',
+        deviceType: 'android',
+        appVersion: '1.0.2',
+        pushToken: 'string',
+        created: 1497509017194,
+        _id: 59422c991df6e025f05c9ed2,
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:43:37.233] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 370 Kb - response time 83 ms
+[2017-06-15 14:43:40.242] [INFO] api - Server listening on port 3031!
+[2017-06-15 14:43:40.341] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { __v: 0,
+        clientID: 'MNgSq',
+        deviceID: '861933030028500',
+        language: 'CN',
+        deviceType: 'android',
+        appVersion: '1.0.2',
+        pushToken: 'string',
+        created: 1497509020304,
+        _id: 59422c9c8cee7525f3628a81,
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:43:40.346] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 370 Kb - response time 70 ms
+[2017-06-15 14:43:43.438] [INFO] api - Server listening on port 3031!
+[2017-06-15 14:43:43.543] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { __v: 0,
+        clientID: 'Umekb',
+        deviceID: '861933030028500',
+        language: 'CN',
+        deviceType: 'android',
+        appVersion: '1.0.2',
+        pushToken: 'string',
+        created: 1497509023515,
+        _id: 59422c9f851f2325f5a8a2db,
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:43:43.549] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 370 Kb - response time 70 ms
+[2017-06-15 14:45:03.010] [INFO] api - Server listening on port 3031!
+[2017-06-15 14:45:03.116] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { _id: 5930c86c1c499c02fd2f946a,
+        clientID: 'test',
+        deviceID: '861933030028500',
+        language: 'String',
+        deviceType: 'String',
+        appVersion: 'String',
+        created: 1496369260078,
+        __v: 0,
+        rail: [Object],
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:45:03.122] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 458 Kb - response time 78 ms
+[2017-06-15 14:45:03.140] [DEBUG] api - { code: 30000013 }
+[2017-06-15 14:45:03.140] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 17 Kb - response time 4 ms
+[2017-06-15 14:45:19.016] [INFO] api - Server listening on port 3031!
+[2017-06-15 14:45:19.081] [DEBUG] api - { code: 30000013 }
+[2017-06-15 14:45:19.086] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 17 Kb - response time 39 ms
+[2017-06-15 14:45:19.117] [DEBUG] api - { code: 30000013 }
+[2017-06-15 14:45:19.118] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 17 Kb - response time 4 ms
+[2017-06-15 14:45:31.536] [INFO] api - Server listening on port 3031!
+[2017-06-15 14:45:31.603] [DEBUG] api - { code: 30000013 }
+[2017-06-15 14:45:31.617] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 17 Kb - response time 38 ms
+[2017-06-15 14:45:31.641] [DEBUG] api - { code: 30000013 }
+[2017-06-15 14:45:31.641] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 17 Kb - response time 4 ms
+[2017-06-15 14:45:39.005] [INFO] api - Server listening on port 3031!
+[2017-06-15 14:45:39.077] [DEBUG] api - { code: 30000013 }
+[2017-06-15 14:45:39.081] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 17 Kb - response time 38 ms
+[2017-06-15 14:45:39.113] [DEBUG] api - { code: 30000013 }
+[2017-06-15 14:45:39.114] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 17 Kb - response time 4 ms
+[2017-06-15 14:45:59.936] [INFO] api - Server listening on port 3031!
+[2017-06-15 14:46:00.053] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { __v: 0,
+        clientID: 'XwgO4',
+        deviceID: '861933030028500',
+        language: 'CN',
+        deviceType: 'android',
+        appVersion: '1.0.2',
+        pushToken: 'string',
+        created: 1497509160012,
+        _id: 59422d28c9d4122616b19086,
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:46:00.059] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 370 Kb - response time 77 ms
+[2017-06-15 14:46:00.081] [DEBUG] api - { code: 30000013 }
+[2017-06-15 14:46:00.082] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 17 Kb - response time 7 ms
+[2017-06-15 14:46:29.163] [INFO] api - Server listening on port 3031!
+[2017-06-15 14:46:29.269] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { __v: 0,
+        clientID: '0jwyM',
+        deviceID: '861933030028500',
+        language: 'CN',
+        deviceType: 'android',
+        appVersion: '1.0.2',
+        pushToken: 'string',
+        created: 1497509189234,
+        _id: 59422d45446f73261b8b665d,
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:46:29.276] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 370 Kb - response time 74 ms
+[2017-06-15 14:46:29.295] [DEBUG] api - { code: 30000013 }
+[2017-06-15 14:46:29.296] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 17 Kb - response time 7 ms
+[2017-06-15 14:46:32.485] [INFO] api - Server listening on port 3031!
+[2017-06-15 14:46:32.599] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { __v: 0,
+        clientID: '4uGhf',
+        deviceID: '861933030028500',
+        language: 'CN',
+        deviceType: 'android',
+        appVersion: '1.0.2',
+        pushToken: 'string',
+        created: 1497509192549,
+        _id: 59422d483d237c261e5a2e04,
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:46:32.605] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 370 Kb - response time 89 ms
+[2017-06-15 14:46:32.627] [DEBUG] api - { code: 30000013 }
+[2017-06-15 14:46:32.627] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 17 Kb - response time 6 ms
+[2017-06-15 14:47:06.001] [INFO] api - Server listening on port 3031!
+[2017-06-15 14:47:06.111] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { __v: 0,
+        clientID: 'gMtkB',
+        deviceID: '861933030028500',
+        language: 'CN',
+        deviceType: 'android',
+        appVersion: '1.0.2',
+        pushToken: 'string',
+        created: 1497509226075,
+        _id: 59422d6a9b80eb262552ebc8,
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:47:06.117] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 370 Kb - response time 72 ms
+[2017-06-15 14:47:06.144] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { _id: 5930c86c1c499c02fd2f946a,
+        clientID: 'test',
+        deviceID: '0rgqk',
+        language: 'String',
+        deviceType: 'String',
+        appVersion: 'String',
+        created: 1496369260078,
+        __v: 0,
+        rail: [Object],
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:47:06.146] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 448 Kb - response time 11 ms
+[2017-06-15 14:47:06.156] [DEBUG] api - { code: 30000013 }
+[2017-06-15 14:47:06.156] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 17 Kb - response time 3 ms
+[2017-06-15 14:47:28.240] [INFO] api - Server listening on port 3031!
+[2017-06-15 14:47:28.336] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { __v: 0,
+        clientID: 'CzcHM',
+        deviceID: '861933030028500',
+        language: 'CN',
+        deviceType: 'android',
+        appVersion: '1.0.2',
+        pushToken: 'string',
+        created: 1497509248300,
+        _id: 59422d80f9b2b1262a2c42d1,
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:47:28.342] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 370 Kb - response time 67 ms
+[2017-06-15 14:47:28.365] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { _id: 5930c86c1c499c02fd2f946a,
+        clientID: 'test',
+        deviceID: '861933030028500',
+        language: 'String',
+        deviceType: 'String',
+        appVersion: 'String',
+        created: 1496369260078,
+        __v: 0,
+        rail: [Object],
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:47:28.367] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 458 Kb - response time 10 ms
+[2017-06-15 14:47:28.378] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { _id: 5930c86c1c499c02fd2f946a,
+        clientID: 'test',
+        deviceID: 'IOnr6',
+        language: 'String',
+        deviceType: 'String',
+        appVersion: 'String',
+        created: 1496369260078,
+        __v: 0,
+        rail: [Object],
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:47:28.380] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 448 Kb - response time 6 ms
+[2017-06-15 14:48:32.857] [INFO] api - Server listening on port 3031!
+[2017-06-15 14:48:32.957] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { __v: 0,
+        clientID: 'Ib4jQ',
+        deviceID: '861933030028500',
+        language: 'CN',
+        deviceType: 'android',
+        appVersion: '1.0.2',
+        pushToken: 'string',
+        created: 1497509312918,
+        _id: 59422dc0b1aad02636b57dea,
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:48:32.964] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 370 Kb - response time 73 ms
+[2017-06-15 14:48:32.992] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { _id: 5930c86c1c499c02fd2f946a,
+        clientID: 'test',
+        deviceID: '861933030028500',
+        language: 'String',
+        deviceType: 'String',
+        appVersion: 'String',
+        created: 1496369260078,
+        __v: 0,
+        rail: [Object],
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:48:32.993] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 458 Kb - response time 12 ms
+[2017-06-15 14:48:33.010] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { _id: 5930c86c1c499c02fd2f946a,
+        clientID: 'test',
+        deviceID: '3Z9Q0',
+        language: 'String',
+        deviceType: 'String',
+        appVersion: 'String',
+        created: 1496369260078,
+        __v: 0,
+        rail: [Object],
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:48:33.011] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 448 Kb - response time 8 ms
+[2017-06-15 14:48:56.257] [INFO] api - Server listening on port 3031!
+[2017-06-15 14:48:56.364] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { __v: 0,
+        clientID: 'QoM8X',
+        deviceID: '861933030028500',
+        language: 'CN',
+        deviceType: 'android',
+        appVersion: '1.0.2',
+        pushToken: 'string',
+        created: 1497509336320,
+        _id: 59422dd85d7165263b8696c2,
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:48:56.369] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 370 Kb - response time 74 ms
+[2017-06-15 14:48:56.394] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { _id: 5930c86c1c499c02fd2f946a,
+        clientID: 'test',
+        deviceID: '861933030028500',
+        language: 'String',
+        deviceType: 'String',
+        appVersion: 'String',
+        created: 1496369260078,
+        __v: 0,
+        rail: [Object],
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:48:56.396] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 458 Kb - response time 12 ms
+[2017-06-15 14:48:56.408] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { _id: 5930c86c1c499c02fd2f946a,
+        clientID: 'test',
+        deviceID: 'l2EcA',
+        language: 'String',
+        deviceType: 'String',
+        appVersion: 'String',
+        created: 1496369260078,
+        __v: 0,
+        rail: [Object],
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:48:56.409] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 448 Kb - response time 7 ms
+[2017-06-15 14:49:41.316] [INFO] api - Server listening on port 3031!
+[2017-06-15 14:49:41.467] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { __v: 0,
+        clientID: 'Y6vzh',
+        deviceID: '861933030028500',
+        language: 'CN',
+        deviceType: 'android',
+        appVersion: '1.0.2',
+        pushToken: 'string',
+        created: 1497509381418,
+        _id: 59422e05454aab26437bf473,
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:49:41.472] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 370 Kb - response time 89 ms
+[2017-06-15 14:49:41.496] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { _id: 5930c86c1c499c02fd2f946a,
+        clientID: 'test',
+        deviceID: '861933030028500',
+        language: 'String',
+        deviceType: 'String',
+        appVersion: 'String',
+        created: 1496369260078,
+        __v: 0,
+        rail: [Object],
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:49:41.498] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 458 Kb - response time 11 ms
+[2017-06-15 14:49:41.511] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { _id: 5930c86c1c499c02fd2f946a,
+        clientID: 'test',
+        deviceID: 'mfUIe',
+        language: 'String',
+        deviceType: 'String',
+        appVersion: 'String',
+        created: 1496369260078,
+        __v: 0,
+        rail: [Object],
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:49:41.512] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 448 Kb - response time 7 ms
+[2017-06-15 14:50:37.907] [INFO] api - Server listening on port 3031!
+[2017-06-15 14:50:38.059] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { __v: 0,
+        clientID: 'seSXa',
+        deviceID: '861933030028500',
+        language: 'CN',
+        deviceType: 'android',
+        appVersion: '1.0.2',
+        pushToken: 'string',
+        created: 1497509438014,
+        _id: 59422e3e5605b7264d806134,
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:50:38.065] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 370 Kb - response time 81 ms
+[2017-06-15 14:50:38.087] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { _id: 5930c86c1c499c02fd2f946a,
+        clientID: 'test',
+        deviceID: '861933030028500',
+        language: 'String',
+        deviceType: 'String',
+        appVersion: 'String',
+        created: 1496369260078,
+        __v: 0,
+        rail: [Object],
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:50:38.088] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 458 Kb - response time 10 ms
+[2017-06-15 14:51:14.087] [INFO] api - Server listening on port 3031!
+[2017-06-15 14:51:14.233] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { __v: 0,
+        clientID: 'yqcN6',
+        deviceID: '861933030028500',
+        language: 'CN',
+        deviceType: 'android',
+        appVersion: '1.0.2',
+        pushToken: 'string',
+        created: 1497509474189,
+        _id: 59422e62cf8d29265471c775,
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:51:14.240] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 370 Kb - response time 87 ms
+[2017-06-15 14:51:14.259] [DEBUG] api - { code: 30000013 }
+[2017-06-15 14:51:14.260] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 17 Kb - response time 6 ms
+[2017-06-15 14:51:29.822] [INFO] api - Server listening on port 3031!
+[2017-06-15 14:51:29.921] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { __v: 0,
+        clientID: 'vHQiW',
+        deviceID: '861933030028500',
+        language: 'CN',
+        deviceType: 'android',
+        appVersion: '1.0.2',
+        pushToken: 'string',
+        created: 1497509489880,
+        _id: 59422e714affc126581ec130,
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:51:29.927] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 370 Kb - response time 73 ms
+[2017-06-15 14:51:29.961] [DEBUG] api - { code: 30000013 }
+[2017-06-15 14:51:29.962] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 17 Kb - response time 8 ms
+[2017-06-15 14:51:29.973] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { _id: 5930c86c1c499c02fd2f946a,
+        clientID: 'test',
+        deviceID: 'GgchK',
+        language: 'String',
+        deviceType: 'String',
+        appVersion: 'String',
+        created: 1496369260078,
+        __v: 0,
+        rail: [Object],
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:51:29.974] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 448 Kb - response time 8 ms
+[2017-06-15 14:51:34.948] [INFO] api - Server listening on port 3031!
+[2017-06-15 14:51:35.036] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { __v: 0,
+        clientID: '9gUiV',
+        deviceID: '861933030028500',
+        language: 'CN',
+        deviceType: 'android',
+        appVersion: '1.0.2',
+        pushToken: 'string',
+        created: 1497509495005,
+        _id: 59422e7738355f265b03239d,
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:51:35.042] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 370 Kb - response time 63 ms
+[2017-06-15 14:51:35.075] [DEBUG] api - { code: 30000013 }
+[2017-06-15 14:51:35.076] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 17 Kb - response time 7 ms
+[2017-06-15 14:51:35.087] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { _id: 5930c86c1c499c02fd2f946a,
+        clientID: 'test',
+        deviceID: 'QZjkW',
+        language: 'String',
+        deviceType: 'String',
+        appVersion: 'String',
+        created: 1496369260078,
+        __v: 0,
+        rail: [Object],
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:51:35.088] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 448 Kb - response time 8 ms
+[2017-06-15 14:51:41.802] [INFO] api - Server listening on port 3031!
+[2017-06-15 14:51:41.893] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { __v: 0,
+        clientID: 'VwF5J',
+        deviceID: '861933030028500',
+        language: 'CN',
+        deviceType: 'android',
+        appVersion: '1.0.2',
+        pushToken: 'string',
+        created: 1497509501867,
+        _id: 59422e7d6927a8265e3cd1e9,
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:51:41.898] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 370 Kb - response time 63 ms
+[2017-06-15 14:51:41.928] [DEBUG] api - { code: 30000013 }
+[2017-06-15 14:51:41.929] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 17 Kb - response time 8 ms
+[2017-06-15 14:51:41.940] [DEBUG] api - { code: 1,
+  data: 
+   { user: 
+      { _id: 5930c86c1c499c02fd2f946a,
+        clientID: 'test',
+        deviceID: 'bgGcS',
+        language: 'String',
+        deviceType: 'String',
+        appVersion: 'String',
+        created: 1496369260078,
+        __v: 0,
+        rail: [Object],
+        pets: [],
+        devices: [Object],
+        type: 1 } } }
+[2017-06-15 14:51:41.941] [INFO] api - :request-id - ::ffff:127.0.0.1 - POST /halokit/v1/device/bindDevice - status:200 - 448 Kb - response time 7 ms

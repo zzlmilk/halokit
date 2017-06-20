@@ -66,6 +66,7 @@ UserUpdateHandler.prototype.attach = function(router){
 			        var appVersion = request.body.appVersion;
 			        var pushToken = request.body.pushToken;
 
+
 			 		if(!err){	
 			 			user.language = language;
 			 			user.save(function(err){
@@ -118,6 +119,9 @@ UserUpdateHandler.prototype.validate = function(requestBody,callBack){
         if(_.isEmpty(requestBody.language))            	
             callBack(Const.resCodeSignUpNoLanguage)
 
+
+        // if(_.isEmpty(requestBody.language))                
+        //     callBack(Const.resCodeSignUpNoLanguage)
         // if(_.isEmpty(requestBody.appVersion))            	
         //     callBack(Const.resCodeSignUpNoAppVersion)
 

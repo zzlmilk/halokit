@@ -1,6 +1,0 @@
-[2017-06-06 10:46:17.611] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /halokit/v1/halokit/24g3?clientID=test&deviceID=861933030006506 - status:200 - 1221 Kb - response time 44 ms
-[2017-06-06 10:46:50.428] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /halokit/v1/halokit/24g3?clientID=test&deviceID=861933030006506 - status:200 - 1221 Kb - response time 41 ms
-[2017-06-06 18:08:36.385] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /halokit/v1/halokit/24g3?clientID=test&deviceID=861933030006506 - status:200 - 239649 Kb - response time 161 ms
-[2017-06-06 18:08:50.501] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /halokit/v1/halokit/24g3?clientID=test&deviceID=861933030006506 - status:200 - 239649 Kb - response time 185 ms
-[2017-06-06 18:09:21.486] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /halokit/v1/halokit/24g3?clientID=test&deviceID=861933030006506 - status:200 - 239649 Kb - response time 161 ms
-[2017-06-06 18:09:39.370] [INFO] api - :request-id - ::ffff:127.0.0.1 - GET /halokit/v1/halokit/24g3?clientID=test&deviceID=861933030006506 - status:200 - 239649 Kb - response time 212 ms

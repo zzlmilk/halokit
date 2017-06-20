@@ -13,9 +13,12 @@ var TcpSocketAPIHandler = require('../TcpSocketAPIHandler');
 
 var _00Handler = function(){
     
+
+
 }
 
 _.extend(_00Handler.prototype,SocketHandlerBase.prototype);
+
 
 
 
@@ -42,9 +45,7 @@ _.extend(_00Handler.prototype,SocketHandlerBase.prototype);
 	var clientID = param.clientID || param.clientid;
 	var func = param.func;
 
-
 	//	console.log()
-
 
 	 var userModel = UserModel.get();
 
@@ -68,16 +69,13 @@ _.extend(_00Handler.prototype,SocketHandlerBase.prototype);
                     }
               
                    TcpSocketAPIHandler.wirteToUser(deviceID,socketdata,socket)
-                 
+                  
                   return;
                   }
                   else{
 
-
-                   
-
-	              //用户放入在线列表
-		  	     OnlineUsersManager.addUser(data[0].toObject(),socket.id);
+    	               //用户放入在线列表
+    		  	         OnlineUsersManager.addUser(data[0].toObject(),socket.id);
 
                       var u = data[0];
                       var socketdata = {
@@ -88,18 +86,15 @@ _.extend(_00Handler.prototype,SocketHandlerBase.prototype);
                         data:{user:u}
                     }
 
-		  	                    //寻找App对应的设备是否不是在线
+		  	           //寻找App对应的设备是否不是在线
                    if (OnlineUsersManager.getOnlineDevicesByDeviceId(deviceID)){
-                    
-            
-                   TcpSocketAPIHandler.wirteToUser(deviceID,socketdata)
-
-
+                              
+                      TcpSocketAPIHandler.wirteToUser(deviceID,socketdata)
+                      
                    }
-                   else{                         
-                    TcpSocketAPIHandler.wirteToUserWhenDeviceNotOnLine(socket,func);                    	
-                   }                       
-                  		
+                   else{            
+                    TcpSocketAPIHandler.wirteToUserWhenDeviceNotOnLine(deviceID,socket,func);                    	
+                   }                                          		
                  }
              });
 
